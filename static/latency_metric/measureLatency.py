@@ -36,7 +36,7 @@ def replicate_googleplus_requests(access_token, experiment_id, experiment_list):
 			# 	data = urllib2.urlopen(req)
 			# 	# We set end time
 			# 	endTime = time.time()
-				
+
 			# 	# Mandamos los tiempos recogidos a Mixpanel de la petición realizada desde el host
 			# 	options_requestTime = (endTime - startTime)*1000
 
@@ -50,12 +50,12 @@ def replicate_googleplus_requests(access_token, experiment_id, experiment_list):
 			endTime = time.time()
 			get_requestTime =  (endTime - startTime)*1000
 			# Calculamos el tiempo total
-			total_request_time = options_requestTime + get_requestTime 
+			total_request_time = options_requestTime + get_requestTime
 			requestCount = 2 if not options_requestTime == 0 else 1
 			print ">>> Request time: ", total_request_time
 			print ">>> Request count: ", requestCount
-			
-			# Mandamos el evento a mixpanel		
+
+			# Mandamos el evento a mixpanel
 			mp.track("1111", 'latencyMetric', {
 			    'component': 'googleplus-timeline',
 			    'version': 'host',
@@ -83,10 +83,10 @@ def main():
 			# Medimos la latencia desde el host
 			data = {}
 			data['access_token'] = '2062815740.34af286.169a9c42e1404ae58591d066c00cb979'
-			url_values = urllib.urlencode(data)	
+			url_values = urllib.urlencode(data)
 			instagram_url = 'http://instagram-timeline.appspot.com/request/instagram'
 			full_url = instagram_url + '?' + url_values
-			
+
 			req = urllib2.Request(full_url)
 			# We set the start time
 			startTime = time.time()
@@ -102,7 +102,7 @@ def main():
 			    'component': 'instagram-timeline',
 			    'version': 'host',
 			    'requestDuration': requestTime,
-			    'experiment_id': experiment_id,
+			    'experiment': experiment_id,
 			    'request': full_url
 			})
 
@@ -112,7 +112,7 @@ def main():
 			webbrowser.open_new(server_base_url + "/Accuracy/InstagramLatency.html?experiment="+ experiment_id)
 			time.sleep(10)
 			webbrowser.open_new(server_base_url + "/Latency/InstagramLatency.html?experiment="+ experiment_id)
-		
+
 		elif social_network == 'github':
 			# Medimos la latencia desde el host
 			github_url = "https://api.github.com/users/polymer-spain/received_events"
@@ -132,7 +132,7 @@ def main():
 			    'component': 'github-events',
 			    'version': 'host',
 			    'requestDuration': requestTime,
-			    'experiment_id': experiment_id,
+			    'experiment': experiment_id,
 			    'request': github_url
 			})
 			# Lanzamos una pestaña por cada versión del componente
@@ -162,7 +162,7 @@ def main():
 			    'component': 'facebooks-wall',
 			    'version': 'host',
 			    'requestDuration': requestTime,
-			    'experiment_id': experiment_id,
+			    'experiment': experiment_id,
 			    'request': facebook_url
 			})
 			# Lanzamos una pestaña por cada versión del componente (El componente de Facebook tiene solo una version implementada)
@@ -185,7 +185,7 @@ def main():
           			'consumer_secret': "8HIPpQgL6d3WWQMDN5DPTHefjb5qfvTFg78j1RdZbR19uEPZMf",
           			'count': 200 }
 
-			url_values = urllib.urlencode(data)	
+			url_values = urllib.urlencode(data)
 			full_url = twitter_url + '?' + url_values
 			print full_url
 
@@ -217,7 +217,7 @@ def main():
 			webbrowser.open_new("http://metricas-formales.appspot.com/app/latency_metric/Latency/TwitterTimelineLatency.html?experiment="+ experiment_id)
 			time.sleep(10)
 			webbrowser.open_new("http://metricas-formales.appspot.com/app/latency_metric/Accuracy/TwitterTimelineLatency.html?experiment="+ experiment_id)
-			
+
 
 		elif social_network == 'googleplus' and len(sys.argv) >= 3:
 			access_token = sys.argv[2]
@@ -227,14 +227,14 @@ def main():
 			webbrowser.open_new(server_base_url + "/Accuracy/GoogleplusLatency.html?experiment=" + experiment_id)
 			time.sleep(10)
 			webbrowser.open_new(server_base_url + "/Latency/GoogleplusLatency.html?experiment=" + experiment_id)
-		
+
 			# First, we obtain data generated today from stable versions
 			query = 'properties["experiment_id"]==\"' + experiment_id + '\" and properties["version"]=="stable" and properties["component"]=="googleplus-timeline"'
 			experiment_dict = query_client.get_export(time.strftime("%Y-%m-%d"), time.strftime("%Y-%m-%d"), "latencyMetric", where=query, result_key='request')
 
 			# We replicate the request done from the client side and send the request times to Mixpanel
 			replicate_googleplus_requests(access_token, experiment_id, experiment_dict)
-	
+
 	else:
 		print "Wrong social network or missing param"
 		# {}: Obligatorio, []: opcional
