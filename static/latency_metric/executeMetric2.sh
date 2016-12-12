@@ -8,7 +8,7 @@
 # Antes de hacer una prueba nueva hay que hacer los siguientes pasos:
 # - 	Hay que cambiar el token que está en FacebookWallLatency.html (carpeta Stable) y la variable FACEBOOK_TOKEN
 # En GoogleplusLatency.html (Carpetas Accuracy, Latency, Stable) cambiar el valor de la variable access_token y la variable GOOGLE_TOKEN
-FACEBOOK_TOKEN="EAACEdEose0cBAD1OiaE2nKOKXMD3zW7CfhZBD2npN2Hi6ZBb26IcDJ1EqQaUKsWiZC7E894BSZBlJEKGvw0iZBGDiDmZAeLMnDTwNXAOJsZAY5uYq0qrf5agYJpNHONPlPhYhEsJsgXo4uDZBzKo5y8xZCbU3jQI2jiijpbB2DTmzzwZDZD"
+FACEBOOK_TOKEN="EAACEdEose0cBAMxwTzOZAm7CasjOZCgfitnCAUUNIRFd71WnalMIH46PRo1kdQNAVnIOrUGim07rP7xOciKsiqcRGPfEuCV1ZAJjmc5OIkBZBd5TEPQPyzuZB5vZAVoNeZBxO4nmBdkMsz9xMXVo1a4HJSm1RxLytZBd6KOZAIU4VhAZDZD"
 GOOGLE_TOKEN="ya29.CjmvA8NQfO9YjPqSyrK27bbkwiD2y_Jq22Ypjr8PfExjQhN9_wRygRWmwatzXUFi719uJsl7jeeWZWo"
 
 # Comentar esta línea si los componentes están deplegados en remoto
@@ -33,10 +33,10 @@ echo "Realizando pruebas sobre el componente facebook-wall..."
 python measureLatency.py facebook $FACEBOOK_TOKEN
 
 #lo tengo en latency_metric_ana por falta de espacion al desplegar en app engine
-sleep 10
-echo "##################################################################"
-echo "Realizando pruebas sobre el componente googleplus-timeline..."
-python measureLatency.py googleplus $GOOGLE_TOKEN
+# sleep 10
+# echo "##################################################################"
+# echo "Realizando pruebas sobre el componente googleplus-timeline..."
+# python measureLatency.py googleplus $GOOGLE_TOKEN
 
 
 sleep 10
@@ -45,7 +45,7 @@ echo "Recolectando y calculando métrica de latencia sobre los componentes proba
 #python collectLatencyRecords.py instagram-timeline
 #python collectLatencyRecords.py github-events
 python collectLatencyRecords.py facebook-wall
-python collectLatencyRecords.py googleplus-timeline
+#python collectLatencyRecords.py googleplus-timeline
 echo "Métricas calculadas"
 
 # Matamos el proceso correspondiente al servidor local de componentes de python

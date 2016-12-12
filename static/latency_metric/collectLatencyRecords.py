@@ -20,7 +20,7 @@ mp = Mixpanel("53da31965c3d047fa72de756aae43db1")
 #START_DATE = time.strftime("%Y-%m-%d")
 #END_DATE = START_DATE
 START_DATE = "2016-12-06"
-END_DATE = "2016-12-11"
+END_DATE = "2016-12-12"
 
 # La fecha desde la que has empezado a enviar datos a Mixpanel (se usa para ver si hay algún resultado final que pueda estar duplicado)
 START_STUDY_DATE = "2016-12-06"
@@ -95,7 +95,7 @@ def main():
 			# Then we'll obtain the events generated from the components
 			query = 'properties["component"]==\"' + component + '\" and properties["version"]=="host"'
 			experiments_dict = query_client.get_export(START_DATE,END_DATE, 'latencyMetric', where=query, result_key='experiment')
-
+			print experiments_dict
 			# We obtain the calculated metrics on the same range of time data to check if there is any latency records
 			#(and to check later for duplicates)
 			query = 'properties["component"]==\"' + component + '\"'
