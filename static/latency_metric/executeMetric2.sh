@@ -8,7 +8,7 @@
 # Antes de hacer una prueba nueva hay que hacer los siguientes pasos:
 # - 	Hay que cambiar el token que está en FacebookWallLatency.html (carpeta Stable) y la variable FACEBOOK_TOKEN
 # En GoogleplusLatency.html (Carpetas Accuracy, Latency, Stable) cambiar el valor de la variable access_token y la variable GOOGLE_TOKEN
-FACEBOOK_TOKEN="EAACEdEose0cBAMxwTzOZAm7CasjOZCgfitnCAUUNIRFd71WnalMIH46PRo1kdQNAVnIOrUGim07rP7xOciKsiqcRGPfEuCV1ZAJjmc5OIkBZBd5TEPQPyzuZB5vZAVoNeZBxO4nmBdkMsz9xMXVo1a4HJSm1RxLytZBd6KOZAIU4VhAZDZD"
+FACEBOOK_TOKEN="EAACEdEose0cBAIoateGlRtsn95bGukvVY0ZCJSvxPp27bsw5tPI6F6HHqqtZBeRgwWOhJGBQqJbPkMR4UwYnzI48ZAuk6KCLxnhaq4TYgYjhcvwF3d1X3usrdO7XC8nAmIrUMYt9ZCeA6aZATuHItdyUwozATIrgj85G6YKPL3QZDZD"
 GOOGLE_TOKEN="ya29.CjmvA8NQfO9YjPqSyrK27bbkwiD2y_Jq22Ypjr8PfExjQhN9_wRygRWmwatzXUFi719uJsl7jeeWZWo"
 
 # Comentar esta línea si los componentes están deplegados en remoto
