@@ -69,7 +69,7 @@ def replicate_googleplus_requests(access_token, experiment_id, experiment_list):
 
 # Url para obtener nuevo token de facebook: https://developers.facebook.com/tools/explorer/145634995501895/
 def main():
-	network_list = ["instagram", "facebook", "github", "googleplus", "twitter"]
+	network_list = ["instagram", "facebook", "github", "googleplus", "twitter", "pinterest"]
 	server_base_url = "http://localhost:8000"
 	if len(sys.argv) >= 2:
 		social_network = sys.argv[1]
@@ -235,9 +235,40 @@ def main():
 			# We replicate the request done from the client side and send the request times to Mixpanel
 			replicate_googleplus_requests(access_token, experiment_id, experiment_dict)
 
+		elif social_network == 'pinterest':
+			access_token = "AT94JqO8T0WFpDZ29bzcfPAUFCq6FJGf_BsCTEVDaxDMLKAvZgAAAAA"
+			user_url = "https://api.pinterest.com/v1/me/"
+			userboards_url = "https://api.pinterest.com/v1/me/boards/"
+			followingboards_url = "https://api.pinterest.com/v1/me/following/boards/"
+			# Here we have to wait until having the user_id and the boards_id retrieved
+			# pins:
+			# url="https://api.pinterest.com/v1/boards/{{username}}/{{board}}/pins/"
+			pins_url = ""
+			user_data = {"access_token": access_token,
+						"fields": "id, username, first_name, image"}
+			user_url_values = urllib.urlencode(user_data)
+			user_url_complete = user_url + '?' + user_url_values
+			# We measure the request/response latency from host
+			req = urllib2.Request(user_url_complete) 
+			# We set the start time
+			startTime = time.time()
+			data = urllib2.urlopen(req)
+			# We set end time
+			endTime = time.time()
+			time1 = (endTime - startTime)*1000
+			response = data.read()
+			resp = response.replace(" ", "")
+			resp = resp.replace("{", "")
+			resp = resp.replace("}", "")
+			resp = resp.replace(":", ",")
+			resp = resp.split(",")
+
+			username = resp[2] # First parameter for pins request
+
+
 	else:
 		print "Wrong social network or missing param"
 		# {}: Obligatorio, []: opcional
-		print "Usage: measureLatency.py {facebook|instagram|github|googleplus|twitter} [googleplus_access_token|facebook_access_token]"
+		print "Usage: measureLatency.py {facebook|instagram|github|googleplus|twitter|pinterest} [googleplus_access_token|facebook_access_token]"
 if __name__ == "__main__":
 	main()
