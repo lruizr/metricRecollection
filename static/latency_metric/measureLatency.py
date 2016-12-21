@@ -11,6 +11,7 @@ import mixpanel
 from mixpanel_client import MixpanelQueryClient
 from mixpanel import Mixpanel
 import time
+import re
 mp = Mixpanel("53da31965c3d047fa72de756aae43db1")
 # Instantiates the Query Client
 query_client = MixpanelQueryClient('582d4b303bf22dd746b5bb1b9acbff63', '8b2d351133ac2a5d4df0700afc595fb6')
@@ -236,6 +237,8 @@ def main():
 			replicate_googleplus_requests(access_token, experiment_id, experiment_dict)
 
 		elif social_network == 'pinterest':
+			board_names = []
+			req_limit = 60
 			access_token = "AT94JqO8T0WFpDZ29bzcfPAUFCq6FJGf_BsCTEVDaxDMLKAvZgAAAAA"
 			user_url = "https://api.pinterest.com/v1/me/"
 			userboards_url = "https://api.pinterest.com/v1/me/boards/"
@@ -257,13 +260,54 @@ def main():
 			endTime = time.time()
 			time1 = (endTime - startTime)*1000
 			response = data.read()
-			resp = response.replace(" ", "")
-			resp = resp.replace("{", "")
-			resp = resp.replace("}", "")
-			resp = resp.replace(":", ",")
-			resp = resp.split(",")
+			resp = json.loads(response)
 
-			username = resp[2] # First parameter for pins request
+			username = resp["data"]["username"] # First parameter for pins request
+
+			userboards_data = {"access_token": access_token}
+			userboards_values = urllib.urlencode(userboards_data)
+			userboards_url_complete = userboards_url + '?' + userboards_values
+			# We are going to take measure of start and end of the request
+			req2 = urllib2.Request(userboards_url_complete)
+			# We set the start of the measure
+			startTime = time.time()
+			data = urllib2.urlopen(req2)
+			# We stop measuring
+			endTime = time.time()
+			time2 = (endTime - startTime) * 1000
+			response = data.read()
+			resp = json.loads(response)
+
+			# Now, we need to collect the names of the created boards 
+			for board in resp["data"]:
+				board_names.append(board["name"])
+
+			# Now, we make the third request, to see the boards followed by the user
+			followingboards_url_complete = followingboards_url + '?' + userboards_values
+
+			req3 = urllib2.Request(followingboards_url_complete)
+			# Start the measure of time
+			startTime = time.time()
+			data = urllib2.urlopen(req3)
+			endTime = time.time()
+			# We obtain the value for this request
+			time3 = (endTime - startTime) * 1000
+			response = data.read()
+			resp = json.loads(response)
+			# Now, we need to collect the names of the created boards 
+			for board in resp["data"]:
+				board_names.append(board["name"])
+
+			# The fourth request needs two query params: username and boards name
+			# Due to this, the url is composed for each request
+			pins_data = {"access_token": access_token,
+						"fields": "id, url, image",
+						"limit": req_limit}
+
+			
+
+			
+
 
 
 	else:
