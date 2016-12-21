@@ -13,6 +13,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="paper-inky-focus-behavior.html">
 
 <script>
+
   /**
    * Use `Polymer.PaperCheckedElementBehavior` to implement a custom element
    * that has a `checked` property similar to `Polymer.IronCheckedElementBehavior`
@@ -20,6 +21,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
    * @polymerBehavior Polymer.PaperCheckedElementBehavior
    */
   Polymer.PaperCheckedElementBehaviorImpl = {
+
     /**
      * Synchronizes the element's checked state with its ripple effect.
      */
@@ -33,6 +35,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         }
       }
     },
+
     /**
      * Synchronizes the element's `active` and `checked` state.
      */
@@ -45,11 +48,14 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this.checked = this.active;
       }
     }
+
   };
+
   /** @polymerBehavior Polymer.PaperCheckedElementBehavior */
   Polymer.PaperCheckedElementBehavior = [
     Polymer.PaperInkyFocusBehavior,
     Polymer.IronCheckedElementBehavior,
     Polymer.PaperCheckedElementBehaviorImpl
   ];
+
 </script>

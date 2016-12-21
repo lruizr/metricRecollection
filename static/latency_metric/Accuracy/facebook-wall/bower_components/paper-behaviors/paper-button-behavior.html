@@ -13,9 +13,12 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <link rel="import" href="paper-ripple-behavior.html">
 
 <script>
+
   /** @polymerBehavior Polymer.PaperButtonBehavior */
   Polymer.PaperButtonBehaviorImpl = {
+
     properties: {
+
       /**
        * The z-depth of this element, from 0-5. Setting to 0 will remove the
        * shadow, and each increasing number greater than 0 will be "deeper"
@@ -30,16 +33,20 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         reflectToAttribute: true,
         readOnly: true
       }
+
     },
+
     observers: [
       '_calculateElevation(focused, disabled, active, pressed, receivedFocusFromKeyboard)',
       '_computeKeyboardClass(receivedFocusFromKeyboard)'
     ],
+
     hostAttributes: {
       role: 'button',
       tabindex: '0',
       animated: true
     },
+
     _calculateElevation: function() {
       var e = 1;
       if (this.disabled) {
@@ -51,9 +58,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       }
       this._setElevation(e);
     },
+
     _computeKeyboardClass: function(receivedFocusFromKeyboard) {
-      this.toggleClass('keyboard-focus', receivedFocusFromKeyboard);
+      this.classList.toggle('keyboard-focus', receivedFocusFromKeyboard);
     },
+
     /**
      * In addition to `IronButtonState` behavior, when space key goes down,
      * create a ripple down effect.
@@ -62,11 +71,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
      */
     _spaceKeyDownHandler: function(event) {
       Polymer.IronButtonStateImpl._spaceKeyDownHandler.call(this, event);
-      // Ensure that there is at most one ripple when the space key is held down.
-      if (this.hasRipple() && this.getRipple().ripples.length < 1) {
+      if (this.hasRipple()) {
         this._ripple.uiDownAction();
       }
     },
+
     /**
      * In addition to `IronButtonState` behavior, when space key goes up,
      * create a ripple up effect.
@@ -79,7 +88,9 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         this._ripple.uiUpAction();
       }
     }
+
   };
+
   /** @polymerBehavior */
   Polymer.PaperButtonBehavior = [
     Polymer.IronButtonState,
@@ -87,4 +98,5 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     Polymer.PaperRippleBehavior,
     Polymer.PaperButtonBehaviorImpl
   ];
+
 </script>
