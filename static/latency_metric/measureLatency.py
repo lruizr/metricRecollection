@@ -239,7 +239,7 @@ def main():
 		elif social_network == 'pinterest':
 			board_names = []
 			req_limit = 60
-			access_token = "AT94JqO8T0WFpDZ29bzcfPAUFCq6FJGf_BsCTEVDaxDMLKAvZgAAAAA"
+			access_token = "AdCKtwyMSg_tKhDOvhzQ-25yrkSHFJKOjZfO6N9DaxDMLKAvZgAAAAA"
 			user_url = "https://api.pinterest.com/v1/me/"
 			userboards_url = "https://api.pinterest.com/v1/me/boards/"
 			followingboards_url = "https://api.pinterest.com/v1/me/following/boards/"
@@ -280,7 +280,11 @@ def main():
 
 			# Now, we need to collect the names of the created boards 
 			for board in resp["data"]:
-				board_names.append(board["name"])
+				url = board["url"]
+				splited_url = url.split("/")
+				dict_data = {"username": splited_url[3],
+							"board": splited_url[4]}
+				board_names.append(dict_data)
 
 			# Now, we make the third request, to see the boards followed by the user
 			followingboards_url_complete = followingboards_url + '?' + userboards_values
@@ -294,16 +298,42 @@ def main():
 			time3 = (endTime - startTime) * 1000
 			response = data.read()
 			resp = json.loads(response)
+
 			# Now, we need to collect the names of the created boards 
 			for board in resp["data"]:
-				board_names.append(board["name"])
+				url = board["url"]
+				splited_url = url.split("/")
+				dict_data = {"username": splited_url[3],
+							"board": splited_url[4]}
+				board_names.append(dict_data)
 
-			# The fourth request needs two query params: username and boards name
-			# Due to this, the url is composed for each request
+			# The fourth request needs two query params: username and board name
+			# Due to this, the url is composed for each request with these parameters
 			pins_data = {"access_token": access_token,
 						"fields": "id, url, image",
 						"limit": req_limit}
+			pins_values = urllib.urlencode(pins_data)
+			time_pins = 0
+			for obj in board_names:
+				pin_url_complete = "https://api.pinterest.com/v1/boards/" + obj["username"] + "/" + obj["board"] + "/pins/?" + pins_values
+				req4 = urllib2.Request(pin_url_complete)
+				startTime = time.time()
+				data = urllib2.urlopen(req4)
+				endTime = time.time()
+				response = data.read()
 
+				time_pins += (endTime - startTime) * 1000
+
+			total_request_time = time1 + time2 + time3 + time_pins
+			mp.track("1111", 'latencyMetric', {
+			    'component': 'pinterest-timeline',
+			    'version': 'host',
+			    'requestDuration': total_request_time,
+			    'experiment': experiment_id,
+			    'request': "All requests"
+			})
+
+			print "Done!"
 			
 
 			
