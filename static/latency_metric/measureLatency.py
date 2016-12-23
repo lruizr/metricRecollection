@@ -333,13 +333,6 @@ def main():
 			    'request': "All requests"
 			})
 
-			print "Done!"
-			
-
-			
-
-
-
 	else:
 		print "Wrong social network or missing param"
 		# {}: Obligatorio, []: opcional
