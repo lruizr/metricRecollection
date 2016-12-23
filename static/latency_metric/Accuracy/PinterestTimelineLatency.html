@@ -9,14 +9,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
     <title>Facebook-wall Latency Tracker</title>
-    <script src="pinterest-timeline-stable/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-    <link rel="import" href="pinterest-timeline-stable/pinterest-timeline.html">
+    <script src="pinterest-timeline-accuracy/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="pinterest-timeline-accuracy/pinterest-timeline.html">
   </head>
   <body unresolved>
     <p><code>&lt;pinterest-timeline&gt;</code> Latency Tracker</p>
     <template id="Demo" is="dom-bind">  
       <pinterest-timeline id="componentTested" language="en" token="AdCKtwyMSg_tKhDOvhzQ-25yrkSHFJKOjZfO6N9DaxDMLKAvZgAAAAA"
-      component_directory="./pinterest-timeline-stable/"
+      component_directory="./pinterest-timeline-accuracy/"
       >
       </pinterest-timeline>
       </br></br>
@@ -68,7 +68,7 @@
       window.setTimeout(function() {
         var componentName = document.getElementById("componentTested").tagName;
         var endpoint = "https://api.pinterest.com/v1/"
-        trackEvents(componentName, "stable", endpoint);
+        trackEvents(componentName, "accuracy", endpoint);
       },5000);
     </script>
   </body>
