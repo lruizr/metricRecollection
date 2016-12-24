@@ -333,6 +333,13 @@ def main():
 			    'request': "All requests"
 			})
 
+			# We open a window for each component version
+			webbrowser.open_new(server_base_url + "/Stable/PinterestTimelineLatency.html?experiment=" + experiment_id)
+			time.sleep(10)
+			webbrowser.open_new(server_base_url + "/Accuracy/PinterestTimelineLatency.html?experiment=" + experiment_id)
+			time.sleep(10)
+			webbrowser.open_new(server_base_url + "/Latency/PinterestTimelineLatency.html?experiment=" + experiment_id)
+
 	else:
 		print "Wrong social network or missing param"
 		# {}: Obligatorio, []: opcional
