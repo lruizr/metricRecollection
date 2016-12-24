@@ -19,11 +19,11 @@ mp = Mixpanel("53da31965c3d047fa72de756aae43db1")
 # We set the date to today
 #START_DATE = time.strftime("%Y-%m-%d")
 #END_DATE = START_DATE
-START_DATE = "2016-12-14"
-END_DATE = "2016-12-14"
+START_DATE = "2016-12-24"
+END_DATE = "2016-12-24"
 
 # La fecha desde la que has empezado a enviar datos a Mixpanel (se usa para ver si hay algún resultado final que pueda estar duplicado)
-START_STUDY_DATE = "2016-12-14"
+START_STUDY_DATE = "2016-12-24"
 
 # Send metric results to MixPanel
 def sendResults(component_name, experiment_id, experiment_timestamp, request, tag ,result, event_key):
@@ -49,7 +49,7 @@ def main():
 	# Instantiates the Query Client
 	query_client = MixpanelQueryClient('582d4b303bf22dd746b5bb1b9acbff63', '8b2d351133ac2a5d4df0700afc595fb6')
 
-	componentNames = ["instagram-timeline", "facebook-wall", "github-events", "googleplus-timeline", "twitter-timeline"]
+	componentNames = ["instagram-timeline", "facebook-wall", "github-events", "googleplus-timeline", "twitter-timeline", "pinterest-timeline"]
 
 	if len(sys.argv) == 2 and sys.argv[1] in componentNames:
 		component = sys.argv[1]
@@ -130,7 +130,7 @@ def main():
 	else:
 		print "Wrong parameter"
 		# {}: Obligatorio, []: opcional
-		print "Usage: collectLatencyRecords.py {facebook-wall|instagram-timeline|github-events|googleplus-timeline|twitter-timeline}"
+		print "Usage: collectLatencyRecords.py {facebook-wall|instagram-timeline|github-events|googleplus-timeline|twitter-timeline | pinterest-timeline}"
 
 
 if __name__ == "__main__":
