@@ -19,11 +19,11 @@ mp = Mixpanel("53da31965c3d047fa72de756aae43db1")
 # We set the date to today
 #START_DATE = time.strftime("%Y-%m-%d")
 #END_DATE = START_DATE
-START_DATE = "2016-12-25"
-END_DATE = "2016-12-25"
+START_DATE = "2016-12-27"
+END_DATE = "2016-12-27"
 
 # La fecha desde la que has empezado a enviar datos a Mixpanel (se usa para ver si hay algún resultado final que pueda estar duplicado)
-START_STUDY_DATE = "2016-12-25"
+START_STUDY_DATE = "2016-12-27"
 
 # Send metric results to MixPanel
 def sendResults(component_name, experiment_id, experiment_timestamp, request, tag ,result, event_key):
