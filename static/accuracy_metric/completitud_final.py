@@ -99,6 +99,7 @@ if social_network in network_list:
         lis=[]
         ids=[]
         users=[]
+        sleep(20)
         for tweet in timeline:
             #if para ver si el tweet es un retweet
             if(tweet.has_key('retweeted_status')):
@@ -115,7 +116,6 @@ if social_network in network_list:
             lis.append(text)
             users.append(user)
             ids.append(id_tweet1)
-        print contador
         zipPython=zip(ids,lis)
         zipPythonUser=zip(ids,users)
         #diccionario de tweets e ids
@@ -140,10 +140,11 @@ if social_network in network_list:
         listavalores1=[]
         listaFallosText=[]
         listaFallosUser=[]
-        contadorFallos=0
+        
 
         if version in version_list:
             if version=="master":
+                contadorFallosMaster=0
                 #defino los parametros necesarios para la peticion
                 params={'event':"master",'name':'value','type':"general",'unit':"day",'interval':1}
                 respuesta=x.request(['events/properties/values'], params, format='json')           
@@ -189,11 +190,9 @@ if social_network in network_list:
                         if cmp(valuesP,value)==0:
                             True
                         else:
-                            print "falla en: " + str(key)
-                            print "falla en: " + value
                             liskey.append(key)
                             lisvalue.append(value)
-                            contadorFallos=contadorFallos+1
+                            contadorFallosMaster += 1
                             listaFallosText=zip(liskey,lisvalue)
 
                     else:
@@ -208,11 +207,9 @@ if social_network in network_list:
                         if cmp(vPythonUser,v)==0:
                             True
                         else:
-                            print "falla en: " + str(k) 
-                            print "falla en: " + v
                             liskey.append(k)
                             lisvalue.append(v)
-                            contadorFallos=contadorFallos+1
+                            contadorFallosMaster += 1
                             listaFallosUser=zip(liskey,lisvalue)
 
                     else:
@@ -238,14 +235,17 @@ if social_network in network_list:
                     listavalores1.append(valores1)
                 listavalores1.sort()
 
-                contadorFallos=contadorFallos/float(contador)
-                mpTwitter.track(contadorFallos, "Fallos totales master", {"numero fallos": contadorFallos})                           
+                contadorFallosMaster=contadorFallosMaster/float(contador)
+                print ">>> Version de la comparacion: master"
+                print ">>> Valor de completitud: ", contadorFallosMaster
+                mpTwitter.track(contadorFallosMaster, "Fallos totales master", {"numero fallos": contadorFallosMaster})
 
                     
             elif version=="latency":
                  #defino los parametros necesarios para la peticion
+                contadorFallosLatency=0
                 params={'event':"latency",'name':'value','type':"general",'unit':"day",'interval':1}
-                respuesta=x.request(['events/properties/values'], params, format='json')           
+                respuesta=x.request(['events/properties/values'], params, format='json')         
 
                 for x in respuesta:
                     #pasar de unicode a dict
@@ -287,11 +287,9 @@ if social_network in network_list:
                         if cmp(valuesP,value)==0:
                             True
                         else:
-                            print "falla en: " + str(key)
-                            print "falla en: " + value
                             liskey.append(key)
                             lisvalue.append(value)
-                            contadorFallos=contadorFallos+1
+                            contadorFallosLatency += 1
                             listaFallosText=zip(liskey,lisvalue)
 
                     else:
@@ -306,11 +304,9 @@ if social_network in network_list:
                         if cmp(vPythonUser,v)==0:
                             True
                         else:
-                            print "falla en: " + str(k) 
-                            print "falla en: " + v
                             liskey.append(k)
                             lisvalue.append(v)
-                            contadorFallos=contadorFallos+1
+                            contadorFallosLatency += 1
                             listaFallosUser=zip(liskey,lisvalue)
 
                     else:
@@ -336,12 +332,15 @@ if social_network in network_list:
                     listavalores1.append(valores1)
                 listavalores1.sort() 
 
-                contadorFallos=contadorFallos/float(contador)
-                mpTwitter.track(contadorFallos, "Fallos totales latency", {"numero fallos": contadorFallos})                            
+                contadorFallosLatency=contadorFallosLatency/float(contador)
+                print ">>> Version de la comparacion: latency"
+                print ">>> Valor de completitud: ", contadorFallosLatency
+                mpTwitter.track(contadorFallosLatency, "Fallos totales latency", {"numero fallos": contadorFallosLatency})
 
 
             elif version=="accuracy":
                 #defino los parametros necesarios para la peticion
+                contadorFallosAccuracy = 0
                 params={'event':"accuracy",'name':'value','type':"general",'unit':"day",'interval':1}
                 respuesta=x.request(['events/properties/values'], params, format='json')           
 
@@ -385,11 +384,9 @@ if social_network in network_list:
                         if cmp(valuesP,value)==0:
                             True
                         else:
-                            print "falla en: " + str(key)
-                            print "falla en: " + value
                             liskey.append(key)
                             lisvalue.append(value)
-                            contadorFallos=contadorFallos+1
+                            contadorFallosAccuracy += 1
                             listaFallosText=zip(liskey,lisvalue)
 
                     else:
@@ -404,10 +401,9 @@ if social_network in network_list:
                         if cmp(vPythonUser,v)==0:
                             True
                         else:
-                            print "falla en: " + v
                             liskey.append(k)
                             lisvalue.append(v)
-                            contadorFallos=contadorFallos+1
+                            contadorFallosAccuracy += 1
                             listaFallosUser=zip(liskey,lisvalue)
 
                     else:
@@ -426,7 +422,6 @@ if social_network in network_list:
                         #mpTwitter.track(valores,"Fallos accuracy text",{"posicion":valores ,"tweet": valor, "version":version})
                     listavalores.append(valores)
                 listavalores.sort()
-                print listavalores
 
                 for clave1, valor1 in dictFallosUser.iteritems():
                     if(dictCompPos.has_key(clave1)):
@@ -434,11 +429,11 @@ if social_network in network_list:
                         #mpTwitter.track(valores1,"Fallos accuracy user",{"posicion":valores1 ,"tweet": valor1, "version":version})
                     listavalores1.append(valores1)
                 listavalores1.sort()
-                print listavalores1
 
-                fallosTotales=contadorFallos/float(contador)
-                print fallosTotales
-                mpTwitter.track(contadorFallos, "Fallos totales latency", {"numero fallos": contadorFallos})
+                fallosTotalesAccuracy=contadorFallosAccuracy/float(contador)
+                print ">>> Version de la comparacion: accuracy"
+                print ">>> Valor de completitud: ", fallosTotalesAccuracy
+                mpTwitter.track(contadorFallosAccuracy, "Fallos totales accuracy", {"numero fallos": fallosTotalesAccuracy})
                            
 
 ############################################
