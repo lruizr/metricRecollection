@@ -222,14 +222,14 @@ if social_network in network_list:
             for clave, valor in dictFallosText.iteritems():
                 if(dictCompPos.has_key(clave)):
                     valores=dictCompPos.get(clave,None)
-                    #mpTwitter.track(valores,"Fallos master text",{"posicion":valores ,"tweet": valor, "version":version})
+                    #mpTwitter.track(valores,"Fallos " + version +" text",{"posicion":valores ,"tweet": valor, "version":version})
                 listavalores.append(valores)
             listavalores.sort()
 
             for clave1, valor1 in dictFallosUser.iteritems():
                 if(dictCompPos.has_key(clave1)):
                     valores1=dictCompPos.get(clave1,None)
-                    #mpTwitter.track(valores1,"Fallos master user",{"posicion":valores1 ,"tweet": valor1, "version":version})
+                    #mpTwitter.track(valores1,"Fallos "+ version +" user",{"posicion":valores1 ,"tweet": valor1, "version":version})
                 listavalores1.append(valores1)
             listavalores1.sort()
 
