@@ -8,7 +8,7 @@ Basicly, these actions are related to the setting up for tokens of networks, mai
 Facebook and Googleplus, which are the ones whose token expired after a while.
 
 First, it is necessary to visit https://developers.facebook.com/tools/explorer/145634995501895/
-for Facebook, while for Googleplus it is necesarry to visit 
+for Facebook, while for Googleplus it is necessary to visit 
 https://developers.google.com/+/web/api/rest/latest/activities/list#try-it.
 
 For Facebook, the used version is 2.3 (needed to select it in the correspondent field, and then
@@ -21,7 +21,7 @@ header and the Bearer TOKEN field, which is the token, starting by "ya.29".
 
 These tokens need to be updated in /Accuracy/facebook-wall/FacebookCompletitudAccuracy.html,
 /Latency/facebook-wall/FacebookCompletitudLatency.html and /Master/facebook-wall/FacebookCompletitud.html, 
-field "token" for Facebook.
+field "token" for Facebook, and completitud_final.py file, line 468.
 
 For Google, the files the token need to be updated in are 
 /Accuracy/googleplus-timeline/demo/GooglePlusCompletitudAccuracy.html,
