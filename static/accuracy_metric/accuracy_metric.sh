@@ -6,28 +6,30 @@
 ##############################################################################################################
 
 # Ejecutamos scripts para medir y recolectar los datos
+# Lo primero es desplegar el servidor
 
-
+python -m SimpleHTTPServer >> /dev/null &
+PID=`echo $!`
 #---------#
 #TWITTER
 #---------#
 
-echo "##################################################################"
-echo "Realizando pruebas sobre el componente twitter-timeline: metrica completitud version master"
-python completitud_final.py twitter master
-sleep 10
-# pkill chrome
+# echo "##################################################################"
+# echo "Realizando pruebas sobre el componente twitter-timeline: metrica completitud version master"
+# python completitud_final.py twitter master
+# sleep 10
+# # pkill chrome
 
-echo "##################################################################"
-echo "Realizando pruebas sobre el componente twitter-timeline: metrica completitud version latency"
-python completitud_final.py twitter latency
-sleep 10
-# pkill chrome
+# echo "##################################################################"
+# echo "Realizando pruebas sobre el componente twitter-timeline: metrica completitud version latency"
+# python completitud_final.py twitter latency
+# sleep 10
+# # pkill chrome
 
-echo "##################################################################"
-echo "Realizando pruebas sobre el componente twitter-timeline: metrica completitud version accuracy"
-python completitud_final.py twitter accuracy
-sleep 10
+# echo "##################################################################"
+# echo "Realizando pruebas sobre el componente twitter-timeline: metrica completitud version accuracy"
+# python completitud_final.py twitter accuracy
+# sleep 10
 # pkill chrome
 
 #---------#
@@ -80,23 +82,23 @@ sleep 10
 #FACEBOOK
 #---------#
 
-# echo "##################################################################"
-# echo "Realizando pruebas sobre el componente facebook-wall: metrica completitud version master"
-# python completitud_final.py facebook master
-# sleep 10
-# # pkill chrome
+echo "##################################################################"
+echo "Realizando pruebas sobre el componente facebook-wall: metrica completitud version master"
+python completitud_final.py facebook master
+sleep 10
+# pkill chrome
 
-# echo "##################################################################"
-# echo "Realizando pruebas sobre el componente facebook-wall: metrica completitud version latency"
-# python completitud_final.py facebook latency
-# sleep 10
-# # pkill chrome
+echo "##################################################################"
+echo "Realizando pruebas sobre el componente facebook-wall: metrica completitud version latency"
+python completitud_final.py facebook latency
+sleep 10
+# pkill chrome
 
-# echo "##################################################################"
-# echo "Realizando pruebas sobre el componente facebook-wall: metrica completitud version accuracy"
-# python completitud_final.py facebook accuracy
-# sleep 10
-# # pkill chrome
+echo "##################################################################"
+echo "Realizando pruebas sobre el componente facebook-wall: metrica completitud version accuracy"
+python completitud_final.py facebook accuracy
+sleep 10
+# pkill chrome
 
 
 # #---------#
@@ -146,3 +148,5 @@ sleep 10
 # echo "##################################################################"
 # echo "##################################################################"
 # echo "Valores calculados para la metrica de completitud"
+
+kill -9 $PID

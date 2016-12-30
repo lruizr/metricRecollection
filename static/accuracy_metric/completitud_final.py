@@ -38,7 +38,7 @@ mpPinterest=Mixpanel("6ceb3a37029277deb7f530ac7d65d7d4")
 network_list = ["twitter", "facebook", "googleplus", "pinterest"]
 version_list = ["master","latency", "accuracy"]
 url_base_remote= "http://metricas-formales.appspot.com/app/accuracy_metric"
-url_base_local= "http://localhost:8080/accuracy_metric"
+url_base_local= "http://localhost:8000"
 
 #de los comandos que ejecuto desde consola, me quedo con el segundo (posicion 1,array empieza en 0),
 #consola: python completitud.py twitter coge la "variable" twitter
@@ -455,22 +455,22 @@ if social_network in network_list:
 
         if version in version_list:
             if(version=="master"):
-                webbrowser.open_new(url_base_remote + "/Master/facebook-wall/FacebookCompletitud.html")
+                webbrowser.open_new(url_base_local + "/Master/facebook-wall/FacebookCompletitud.html")
                 sleep(5)
             elif(version=="latency"):
-                webbrowser.open_new(url_base_remote + "/Latency/facebook-wall/FacebookCompletitudLatency.html")
+                webbrowser.open_new(url_base_local + "/Latency/facebook-wall/FacebookCompletitudLatency.html")
                 sleep(5)
             elif(version=="accuracy"):
-                webbrowser.open_new(url_base_remote + "/Accuracy/facebook-wall/FacebookCompletitudAccuracy.html")
+                webbrowser.open_new(url_base_local + "/Accuracy/facebook-wall/FacebookCompletitudAccuracy.html")
                 sleep(5)
 
         #es necesario cambiar el token cada hora y media: https://developers.facebook.com/tools/explorer/928341650551653 (Get User Access Token, version 2.3)
-        access_token="EAANMUmJPs2UBADlumZA4z9ZBJPAFczLhPliTS0SepEXUGd9DsPEl6bVsM953ja4WfXRj10ouLT3OuhZBltXR5yBjLB82DLYA1SQmYiNPeSEnsZAvO1cV2KcWiw6J040OO6ImHE0worFkJIt841HVsCvWRDgU6gy8wos0gMCZB8AZDZD"
+        access_token="EAACEdEose0cBAE0o0Gxhd72t3zdruzZChUGkcWOpkNASQj59kWWyzZC6FUS557kZCfA33drusPVTUDJ6s7p0YveOhjm2K27EsPsn5Ilq2Lut9HMkS7nrS3U1g4MBRZBe44by4h82Qfixa0xoLHzQqO1ZAl6yrcjMavUiuczt9VwZDZD"
         facebook_url = "https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=" + access_token
 
         #Request timeline home
         s= requests.get(facebook_url)
-        print s
+        
         muro=s.json()
         contador=0
         texto=[]
@@ -489,6 +489,7 @@ if social_network in network_list:
         for k,v in muro.iteritems():
             if(muro.has_key('home')):
                 values=muro.get('home',None)
+        print len(muro)
 
         #recorro todos los campos que tiene data
         for items in values:
@@ -528,7 +529,6 @@ if social_network in network_list:
             images.append(imagen)
             texto.append(text)
 
-        print contador
         zipPythonUser=zip(listacont,users)
         #diccionario contador y usuarios
         dictPythonUser=dict(zipPythonUser)
@@ -546,11 +546,12 @@ if social_network in network_list:
         sleep(10)
         # Hay que crear una instancia de la clase Mixpanel, con tus credenciales
         x=mixpanel_api.Mixpanel("de21df1c2c63dff29ffce8a1a449494a","a7917928a9ba3dd88592fac7ac36e8a9")
-        contadorFallos=0
+        
 
         if version in version_list:
             if version=="master":
-            #defino los parametros necesarios para la peticion
+                contadorFallosMaster = 0
+                #defino los parametros necesarios para la peticion
                 params={'event':"master",'name':'value','type':"general",'unit':"day",'interval':1}
                 respuesta=x.request(['events/properties/values'], params, format='json')
 
@@ -596,7 +597,7 @@ if social_network in network_list:
                             liskey.append(k)
                             lisvalue.append(v)
                             listaFallosUser=zip(liskey,lisvalue)
-                            contadorFallos=contadorFallos+1
+                            contadorFallosMaster += 1
                             #mpFacebook.track(listaFallosUser,"Fallos master user",{"posicion":listaFallosUser, "version":"master"})
 
                     else:
@@ -618,7 +619,7 @@ if social_network in network_list:
                             liskey.append(k)
                             lisvalue.append(v)
                             listaFallosImagen=zip(liskey,lisvalue)
-                            contadorFallos=contadorFallos+1
+                            contadorFallosMaster += 1
                             #mpFacebook.track(listaFallosImagen,"Fallos master imagen",{"posicion":listaFallosImagen, "version":"master"})
 
                     else:
@@ -639,14 +640,17 @@ if social_network in network_list:
                             liskey.append(k)
                             lisvalue.append(v)
                             listaFallosText=zip(liskey,lisvalue)
-                            contadorFallos=contadorFallos+1
+                            contadorFallosMaster += 1
                             #mpFacebook.track(listaFallosText,"Fallos master text",{"posicion":listaFallosText, "version":"master"})  
-
-                contadorFallos=contadorFallos/float(contador)
-                print contadorFallos
-                mpFacebook.track(contadorFallos, "Fallos totales master", {"numero fallos": contadorFallos})
+                print "Contador Fallos Master = " + str(contadorFallosMaster)
+                print "Contador total = " + str(contador)
+                contadorFallosMaster=contadorFallosMaster/float(contador)
+                print ">>> Version de la comparacion: master"
+                print ">>> Diferencia de completitud: ", contadorFallosMaster
+                mpFacebook.track(contadorFallosMaster, "Fallos totales master", {"numero fallos": contadorFallosMaster})
 
             elif version=="latency":
+                contadorFallosLatency = 0
                 #defino los parametros necesarios para la peticion
                 params={'event':"latency",'name':'value','type':"general",'unit':"day",'interval':1}
                 respuesta=x.request(['events/properties/values'], params, format='json')
@@ -693,7 +697,7 @@ if social_network in network_list:
                             liskey.append(k)
                             lisvalue.append(v)
                             listaFallosUser=zip(liskey,lisvalue)
-                            contadorFallos=contadorFallos+1
+                            contadorFallosLatency += 1
                             #mpFacebook.track(listaFallosUser,"Fallos latency user",{"posicion":listaFallosUser, "version":"latency"})
 
                     else:
@@ -715,7 +719,7 @@ if social_network in network_list:
                             liskey.append(k)
                             lisvalue.append(v)
                             listaFallosImagen=zip(liskey,lisvalue)
-                            contadorFallos=contadorFallos+1
+                            contadorFallosLatency += 1
                             #mpFacebook.track(listaFallosImagen,"Fallos latency imagen",{"posicion":listaFallosImagen, "version":"latency"})
 
                     else:
@@ -736,14 +740,17 @@ if social_network in network_list:
                             liskey.append(k)
                             lisvalue.append(v)
                             listaFallosText=zip(liskey,lisvalue)
-                            contadorFallos=contadorFallos+1
+                            contadorFallosLatency += 1
                             #mpFacebook.track(listaFallosText,"Fallos latency text",{"posicion":listaFallosText, "version":"latency"})  
-
-                contadorFallos=contadorFallos/float(contador)
-                print contadorFallos
-                mpFacebook.track(contadorFallos, "Fallos totales latency", {"numero fallos": contadorFallos})
+                print "Contador Fallos Latency = " + str(contadorFallosLatency)
+                print "Contador total = " + str(contador)
+                contadorFallosLatency = contadorFallosLatency/float(contador)
+                print ">>> Version de la comparacion: latency"
+                print ">>> Diferencia de completitud: ", contadorFallosLatency
+                mpFacebook.track(contadorFallosLatency, "Fallos totales latency", {"numero fallos": contadorFallosLatency})
             
             elif version=="accuracy":
+                contadorFallosAccuracy = 0
                 #defino los parametros necesarios para la peticion
                 params={'event':"accuracy",'name':'value','type':"general",'unit':"day",'interval':1}
                 respuesta=x.request(['events/properties/values'], params, format='json')
@@ -790,7 +797,7 @@ if social_network in network_list:
                             liskey.append(k)
                             lisvalue.append(v)
                             listaFallosUser=zip(liskey,lisvalue)
-                            contadorFallos=contadorFallos+1
+                            contadorFallosAccuracy += 1
                             #mpFacebook.track(listaFallosUser,"Fallos accuracy user",{"posicion":listaFallosUser, "version":"accuracy"})
 
                     else:
@@ -812,7 +819,7 @@ if social_network in network_list:
                             liskey.append(k)
                             lisvalue.append(v)
                             listaFallosImagen=zip(liskey,lisvalue)
-                            contadorFallos=contadorFallos+1
+                            contadorFallosAccuracy += 1
                             #mpFacebook.track(listaFallosImagen,"Fallos accuracy imagen",{"posicion":listaFallosImagen, "version":"accuracy"})
 
                     else:
@@ -833,12 +840,14 @@ if social_network in network_list:
                             liskey.append(k)
                             lisvalue.append(v)
                             listaFallosText=zip(liskey,lisvalue)
-                            contadorFallos=contadorFallos+1
+                            contadorFallosAccuracy += 1
                             #mpFacebook.track(listaFallosText,"Fallos accuracy text",{"posicion":listaFallosText, "version":"accuracy"})  
-
-                contadorFallos=contadorFallos/float(contador)
-                print contadorFallos
-                mpFacebook.track(contadorFallos, "Fallos totales accuracy", {"numero fallos": contadorFallos})
+                print "Contador Fallos Accuracy = " + str(contadorFallosAccuracy)
+                print "Contador total = " + str(contador)
+                contadorFallosAccuracy=contadorFallosAccuracy/float(contador)
+                print ">>> version de la comparacion: accuracy"
+                print ">>> Diferencia de completitud: ", contadorFallosAccuracy
+                mpFacebook.track(contadorFallosAccuracy, "Fallos totales accuracy", {"numero fallos": contadorFallosAccuracy})
 
 ############################################
 ############################################

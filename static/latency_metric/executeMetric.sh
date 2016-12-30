@@ -1,5 +1,7 @@
 #!/bin/bash
 
+python -m SimpleHTTPServer >> /dev/null &
+
 echo "##################################################################"
 echo "Realizando pruebas sobre el componente twitter-timeline..."
 python measureLatency.py twitter
