@@ -627,14 +627,12 @@ if social_network in network_list:
             mpGoogle.track(contadorFallos, "Fallos totales " + version, {"numero fallos": contadorFallos})
 
 
-############################################
-############################################
-            #CASO4: PINTEREST
-############################################
-############################################
-
+    ############################################
+    ############################################
+                #CASO4: PINTEREST
+    ############################################
+    ############################################
     elif social_network == 'pinterest':
-
         ##########################################################################################################################################
         #-------------------------------------------------------DATOS PINTEREST API---------------------------------------------------------------
         ##########################################################################################################################################
@@ -731,7 +729,7 @@ if social_network in network_list:
         contadorFallos=0
 
 
-       #metodo que me compara la lista de imagenes obtenidas por la API con la lista de imagenes cogidas en el componente
+        #metodo que me compara la lista de imagenes obtenidas por la API con la lista de imagenes cogidas en el componente
         def comp(list1, list2):
             fallos=[]
             if len(list1) != len(list2):
@@ -743,60 +741,22 @@ if social_network in network_list:
                     contadorFallos=contadorFallos+1
             return fallos
 
-
         if version in version_list:
-            if version=="master":
             #defino los parametros necesarios para la peticion
-                params={'event':"master",'name':'value','type':"general",'unit':"day",'interval':1}
-                respuesta=x.request(['events/properties/values'], params, format='json')
+            params={'event': version ,'name':'value','type':"general",'unit':"day",'interval':1}
+            respuesta=x.request(['events/properties/values'], params, format='json')
 
-                for x in respuesta:
-                    resp=str(x)
-                    imagComp.append(resp)
-                print len(imagComp)
+            for x in respuesta:
+                resp=str(x)
+                imagComp.append(resp)
+            print len(imagComp)
 
-                fallos=comp(imagAPI,imagComp)
-                print fallos
+            fallos=comp(imagAPI,imagComp)
+            print fallos
 
-                mpPinterest.track(fallos,"Fallos master imagenes",{"imagen":fallos, "version":"master"})
-                contadorFallos=contadorFallos/float(contador)
-                mpPinterest.track(contadorFallos, "Fallos totales master", {"numero fallos": contadorFallos})
-
-
-            elif version=="latency":
-                #defino los parametros necesarios para la peticion
-                params={'event':"latency",'name':'value','type':"general",'unit':"day",'interval':1}
-                respuesta=x.request(['events/properties/values'], params, format='json')
-
-                for x in respuesta:
-                    resp=str(x)
-                    imagComp.append(resp)
-                print len(imagComp)
-
-                fallos=comp(imagAPI,imagComp)
-                print fallos
-
-                mpPinterest.track(fallos,"Fallos latency imagenes",{"imagen":fallos, "version":"latency"})
-                ontadorFallos=contadorFallos/float(contador)
-                mpPinterest.track(contadorFallos, "Fallos totales latency", {"numero fallos": contadorFallos})
-
-
-            elif version=="accuracy":
-                #defino los parametros necesarios para la peticion
-                params={'event':"accuracy",'name':'value','type':"general",'unit':"day",'interval':1}
-                respuesta=x.request(['events/properties/values'], params, format='json')
-
-                for x in respuesta:
-                    resp=str(x)
-                    imagComp.append(resp)
-                print len(imagComp)
-
-                fallos=comp(imagAPI,imagComp)
-                print fallos
-
-                mpPinterest.track(fallos,"Fallos accuracy imagenes",{"imagen":fallos, "version":"accuracy"})
-                ontadorFallos=contadorFallos/float(contador)
-                mpPinterest.track(contadorFallos, "Fallos totales accuracy", {"numero fallos": contadorFallos})
+            mpPinterest.track(fallos,"Fallos " + version + " imagenes",{"imagen":fallos, "version": version})
+            ontadorFallos=contadorFallos/float(contador)
+            mpPinterest.track(contadorFallos, "Fallos totales " + version, {"numero fallos": contadorFallos})
 
     else:
         print "Wrong social network or missing param"
