@@ -262,7 +262,7 @@ if social_network in network_list:
                 sleep(5)
 
         #es necesario cambiar el token cada hora y media: https://developers.facebook.com/tools/explorer/928341650551653 (Get User Access Token, version 2.3)
-        access_token="EAACEdEose0cBALMZCbeZCKpuKsP1GjsM7bQ87iTWoEZBQlAdTpfNb3K4yKBMp0OymiBvaOZBH5cCkkZBgOjSFEyou2oAbb7j7F0701tdb3ZBWvccIaGLoDjHlm1ZCr6ZCr865Vvw4mNqh2qwZA04ATRFh4Fgc4rPr7ZBAKqXZBXXVYZBVAZDZD"
+        access_token="EAACEdEose0cBAJi6pKcJvBDjDiZCK7UoIfIjncofRQfLm7vuJvKP7oddQFj3iJEGwFOzEwVgDShVCtckcXXEZCfiMduPqSkTowOJyi1iGZBJOKPiZAZAgTsOSYopxJKihNzjUHw1Txa7KIuT2rhCXKQ39qwhucgW6dQXYKxJcvAZDZD"
         facebook_url = "https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=" + access_token
 
         #Request timeline home
@@ -270,6 +270,7 @@ if social_network in network_list:
         print s
         muro=s.json()
         contador=0
+        pesoFallo = 0
         texto=[]
         ids=[]
         users=[]
@@ -314,8 +315,10 @@ if social_network in network_list:
                 imagen1=items1['picture']
                 hash_object = hashlib.sha1(imagen1)
                 imagen = hash_object.hexdigest()
+                pesoFallo = 0.33
             else:
                 imagen=''
+                pesoFallo = 0.5
 
 
             listacont.append(contador)
@@ -392,7 +395,7 @@ if social_network in network_list:
                         liskey.append(k)
                         lisvalue.append(v)
                         listaFallosUser=zip(liskey,lisvalue)
-                        contadorFallos=contadorFallos+1
+                        contadorFallos += pesoFallo
                         #mpFacebook.track(listaFallosUser,"Fallos "+ version +" user",{"posicion":listaFallosUser, "version": version})
 
                 else:
@@ -414,7 +417,7 @@ if social_network in network_list:
                         liskey.append(k)
                         lisvalue.append(v)
                         listaFallosImagen=zip(liskey,lisvalue)
-                        contadorFallos=contadorFallos+1
+                        contadorFallos += pesoFallo
                         #mpFacebook.track(listaFallosImagen,"Fallos "+ version +" imagen",{"posicion":listaFallosImagen, "version":version})
 
                 else:
@@ -435,7 +438,7 @@ if social_network in network_list:
                         liskey.append(k)
                         lisvalue.append(v)
                         listaFallosText=zip(liskey,lisvalue)
-                        contadorFallos=contadorFallos+1
+                        contadorFallos += pesoFallo
                         #mpFacebook.track(listaFallosText,"Fallos" + version + "text",{"posicion":listaFallosText, "version": version})
 
             contadorFallos=contadorFallos/float(contador)
