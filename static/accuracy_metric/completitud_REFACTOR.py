@@ -38,7 +38,7 @@ mpPinterest=Mixpanel("6ceb3a37029277deb7f530ac7d65d7d4")
 network_list = ["twitter", "facebook", "googleplus", "pinterest"]
 version_list = ["master","latency", "accuracy"]
 url_base_remote= "http://metricas-formales.appspot.com/app/accuracy_metric"
-url_base_local= "http://localhost:8080/accuracy_metric"
+url_base_local= "http://localhost:8000"
 
 #de los comandos que ejecuto desde consola, me quedo con el segundo (posicion 1,array empieza en 0),
 #consola: python completitud.py twitter coge la "variable" twitter
@@ -243,7 +243,7 @@ if social_network in network_list:
     ############################################
 
     elif social_network == 'facebook':
-        #RECORDAR QUE FACE NO MUESTRA LOS POST SECUNCIALMENTE, SINO QUE LOS MUESTRA "COMO QUIERE". Por lo que, en la version de accuracy,
+        #RECORDAR QUE FACE NO MUESTRA LOS POST SECUENCIALMENTE, SINO QUE LOS MUESTRA "COMO QUIERE". Por lo que, en la version de accuracy,
         #cuando se miren los datos que fallan no van a coincidir con las posiciones de fallo que se guardan en mixpanel
         #Facebook hace una ordenacion por ACTUALIZACION, no por creacion
         ##########################################################################################################################################
@@ -252,17 +252,17 @@ if social_network in network_list:
 
         if version in version_list:
             if(version=="master"):
-                webbrowser.open_new(url_base_remote + "/Master/facebook-wall/FacebookCompletitud.html")
+                webbrowser.open_new(url_base_local + "/Master/facebook-wall/FacebookCompletitud.html")
                 sleep(5)
             elif(version=="latency"):
-                webbrowser.open_new(url_base_remote + "/Latency/facebook-wall/FacebookCompletitudLatency.html")
+                webbrowser.open_new(url_base_local + "/Latency/facebook-wall/FacebookCompletitudLatency.html")
                 sleep(5)
             elif(version=="accuracy"):
-                webbrowser.open_new(url_base_remote + "/Accuracy/facebook-wall/FacebookCompletitudAccuracy.html")
+                webbrowser.open_new(url_base_local + "/Accuracy/facebook-wall/FacebookCompletitudAccuracy.html")
                 sleep(5)
 
         #es necesario cambiar el token cada hora y media: https://developers.facebook.com/tools/explorer/928341650551653 (Get User Access Token, version 2.3)
-        access_token="EAANMUmJPs2UBADlumZA4z9ZBJPAFczLhPliTS0SepEXUGd9DsPEl6bVsM953ja4WfXRj10ouLT3OuhZBltXR5yBjLB82DLYA1SQmYiNPeSEnsZAvO1cV2KcWiw6J040OO6ImHE0worFkJIt841HVsCvWRDgU6gy8wos0gMCZB8AZDZD"
+        access_token="EAACEdEose0cBAJi6pKcJvBDjDiZCK7UoIfIjncofRQfLm7vuJvKP7oddQFj3iJEGwFOzEwVgDShVCtckcXXEZCfiMduPqSkTowOJyi1iGZBJOKPiZAZAgTsOSYopxJKihNzjUHw1Txa7KIuT2rhCXKQ39qwhucgW6dQXYKxJcvAZDZD"
         facebook_url = "https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=" + access_token
 
         #Request timeline home
@@ -270,6 +270,7 @@ if social_network in network_list:
         print s
         muro=s.json()
         contador=0
+        pesoFallo = 0
         texto=[]
         ids=[]
         users=[]
@@ -314,8 +315,10 @@ if social_network in network_list:
                 imagen1=items1['picture']
                 hash_object = hashlib.sha1(imagen1)
                 imagen = hash_object.hexdigest()
+                pesoFallo = 0.33
             else:
                 imagen=''
+                pesoFallo = 0.5
 
 
             listacont.append(contador)
@@ -387,12 +390,12 @@ if social_network in network_list:
                     if cmp(vPythonUser,v)==0:
                         True
                     else:
-                        print "falla en posicion: " + str(k)
-                        print "el usuario que falla es : " + v
+                        # print "falla en posicion: " + str(k)
+                        # print "el usuario que falla es : " + v
                         liskey.append(k)
                         lisvalue.append(v)
                         listaFallosUser=zip(liskey,lisvalue)
-                        contadorFallos=contadorFallos+1
+                        contadorFallos += pesoFallo
                         #mpFacebook.track(listaFallosUser,"Fallos "+ version +" user",{"posicion":listaFallosUser, "version": version})
 
                 else:
@@ -409,12 +412,12 @@ if social_network in network_list:
                     if cmp(vPythonImagen,v)==0:
                         True
                     else:
-                        print "falla en posicion: " + str(k)
-                        print "la imagen que falla es : " + v
+                        # print "falla en posicion: " + str(k)
+                        # print "la imagen que falla es : " + v
                         liskey.append(k)
                         lisvalue.append(v)
                         listaFallosImagen=zip(liskey,lisvalue)
-                        contadorFallos=contadorFallos+1
+                        contadorFallos += pesoFallo
                         #mpFacebook.track(listaFallosImagen,"Fallos "+ version +" imagen",{"posicion":listaFallosImagen, "version":version})
 
                 else:
@@ -430,12 +433,12 @@ if social_network in network_list:
                     if cmp(vPythonText,v)==0:
                         True
                     else:
-                        print "falla en posicion: " + str(k)
-                        print "el texto que falla es : " + v
+                        # print "falla en posicion: " + str(k)
+                        # print "el texto que falla es : " + v
                         liskey.append(k)
                         lisvalue.append(v)
                         listaFallosText=zip(liskey,lisvalue)
-                        contadorFallos=contadorFallos+1
+                        contadorFallos += pesoFallo
                         #mpFacebook.track(listaFallosText,"Fallos" + version + "text",{"posicion":listaFallosText, "version": version})
 
             contadorFallos=contadorFallos/float(contador)
@@ -454,19 +457,19 @@ if social_network in network_list:
         ##########################################################################################################################################
         if version in version_list:
             if(version=="master"):
-                webbrowser.open_new(url_base_remote + "/Master/googleplus-timeline/demo/GooglePlusCompletitud.html")
+                webbrowser.open_new(url_base_local + "/Master/googleplus-timeline/demo/GooglePlusCompletitud.html")
                 sleep(3)
             elif(version=="latency"):
-                webbrowser.open_new(url_base_remote + "/Latency/googleplus-timeline/demo/GooglePlusCompletitudLatency.html")
+                webbrowser.open_new(url_base_local + "/Latency/googleplus-timeline/demo/GooglePlusCompletitudLatency.html")
                 sleep(3)
             elif(version=="accuracy"):
-                webbrowser.open_new(url_base_remote + "/Accuracy/googleplus-timeline/demo/GooglePlusCompletitudAccuracy.html")
+                webbrowser.open_new(url_base_local + "/Accuracy/googleplus-timeline/demo/GooglePlusCompletitudAccuracy.html")
                 sleep(3)
 
         sleep(5)
 
         #cambiar token cada hora y media: https://developers.google.com/+/web/api/rest/latest/activities/list?authuser=1
-        access_token=" ya29.CjlYA4BhZvIJllOAI0BJHEQ2dbmX-CTolwmV1OrqGq30pfdKhu1fZKr288pBAZMPBaWzisCONy5fKeM"
+        access_token="ya29.CjnFA6v1_Dr5tjf7xslOx_l4Yko68Q1HgZJH45G8DEbZ5HA1ZPoUQlxN5yJl63CPpZtkqI2OwNfWZbk"
         google_url_followers="https://www.googleapis.com/plus/v1/people/me/people/visible"
         headers = {"Authorization": "Bearer " + access_token}
 
@@ -503,7 +506,7 @@ if social_network in network_list:
             #hay que poner str(i) porque sino no se puede concatenar string con un long (int)
             google_url="https://www.googleapis.com/plus/v1/people/" + str(i) + "/activities/public"
             pet= requests.get(google_url,headers=headers)
-            print pet
+            # print pet
 
             timeline=pet.json()
             if(timeline.has_key('items')):
@@ -596,8 +599,8 @@ if social_network in network_list:
                     if cmp(vPythonUser,v)==0:
                         True
                     else:
-                        print "falla en posicion: " + str(k)
-                        print "el usuario que falla es : " + v
+                        # print "falla en posicion: " + str(k)
+                        # print "el usuario que falla es : " + v
                         liskey.append(k)
                         lisvalue.append(v)
                         listaFallosUser=zip(liskey,lisvalue)
@@ -614,8 +617,8 @@ if social_network in network_list:
                     if cmp(vPythonText,v)==0:
                         True
                     else:
-                        print "falla en posicion: " + str(k)
-                        print "el texto que falla es : " + v
+                        # print "falla en posicion: " + str(k)
+                        # print "el texto que falla es : " + v
                         liskey.append(k)
                         lisvalue.append(v)
                         listaFallosText=zip(liskey,lisvalue)
@@ -755,7 +758,7 @@ if social_network in network_list:
             print fallos
 
             mpPinterest.track(fallos,"Fallos " + version + " imagenes",{"imagen":fallos, "version": version})
-            ontadorFallos=contadorFallos/float(contador)
+            contadorFallos=contadorFallos/float(contador)
             mpPinterest.track(contadorFallos, "Fallos totales " + version, {"numero fallos": contadorFallos})
 
     else:
