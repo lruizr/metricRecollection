@@ -469,7 +469,7 @@ if social_network in network_list:
         sleep(5)
 
         #cambiar token cada hora y media: https://developers.google.com/+/web/api/rest/latest/activities/list?authuser=1
-        access_token="ya29.CjnFA6v1_Dr5tjf7xslOx_l4Yko68Q1HgZJH45G8DEbZ5HA1ZPoUQlxN5yJl63CPpZtkqI2OwNfWZbk"
+        access_token="ya29.CjnIA3nruzHn5XKYGs2kvhMRm0b1baGHGMEKrJ-R6_xFjADb4FdWoQbFAk9jMMDH6qsOiPzOlfdAoAQ"
         google_url_followers="https://www.googleapis.com/plus/v1/people/me/people/visible"
         headers = {"Authorization": "Bearer " + access_token}
 
