@@ -729,7 +729,6 @@ if social_network in network_list:
         x=mixpanel_api.Mixpanel("55736dc621aade0a3e80ea2f7f28f42b","5d34c88bc7f29c166e56484966b1c85b")
 
         imagComp=[]
-        contadorFallos=0
 
 
         #metodo que me compara la lista de imagenes obtenidas por la API con la lista de imagenes cogidas en el componente
@@ -745,6 +744,7 @@ if social_network in network_list:
             return fallos
 
         if version in version_list:
+            contadorFallos=0
             #defino los parametros necesarios para la peticion
             params={'event': version ,'name':'value','type':"general",'unit':"day",'interval':1}
             respuesta=x.request(['events/properties/values'], params, format='json')
@@ -758,7 +758,8 @@ if social_network in network_list:
             print fallos
 
             mpPinterest.track(fallos,"Fallos " + version + " imagenes",{"imagen":fallos, "version": version})
-            contadorFallos=contadorFallos/float(contador)
+            contadorFallos=contadorFallos/float(60)
+            print contadorFallos
             mpPinterest.track(contadorFallos, "Fallos totales " + version, {"numero fallos": contadorFallos})
 
     else:
