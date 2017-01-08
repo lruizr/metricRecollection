@@ -9,7 +9,8 @@ document.addEventListener('WebComponentsReady', function() {
   return function(){
        buttons[i].click()
           window.setTimeout(function(){
-            contador = 0;      
+            contador = 0;
+
             for(var j=0;j<element.pins_cache.length;j++){
               url = element.pins_cache[j].url;
               contador++;
@@ -21,7 +22,7 @@ document.addEventListener('WebComponentsReady', function() {
 }
   window.setTimeout(function() {
     var buttons = element.querySelectorAll(".itemBig");
-    //recorro todos los botones del timeline de pinterest
+    //recorro todos los tableros del timeline de pinterest
     for (var i=0; i<buttons.length;i++){
       window.setTimeout(geti(i,buttons),i*1000);
   }
