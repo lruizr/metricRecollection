@@ -639,18 +639,19 @@ if social_network in network_list:
         ##########################################################################################################################################
         #-------------------------------------------------------DATOS PINTEREST API---------------------------------------------------------------
         ##########################################################################################################################################
+        global contadorFallos
         if version in version_list:
             if(version=="master"):
-                webbrowser.open_new(url_base_local + "/Master/pinterest-timeline/demo/PinterestCompletitud.html")
+                webbrowser.open_new(url_base_local + "/Master/pinterest-timeline-stable/demo/PinterestCompletitud.html")
                 sleep(3)
             elif(version=="latency"):
-                webbrowser.open_new(url_base_local + "/Latency/pinterest-timeline/demo/PinterestCompletitudLatency.html")
+                webbrowser.open_new(url_base_local + "/Latency/pinterest-timeline-latency/demo/PinterestCompletitudLatency.html")
                 sleep(3)
             elif(version=="accuracy"):
-                webbrowser.open_new(url_base_local + "/Accuracy/pinterest-timeline/demo/PinterestCompletitudAccuracy.html")
+                webbrowser.open_new(url_base_local + "/Accuracy/pinterest-timeline-accuracy/demo/PinterestCompletitudAccuracy.html")
                 sleep(3)
 
-        access_token="AYzOkS8gPFoFyhU56X9RjekH8IQFFI3y549FYk9DmW-C0gBCfwAAAAA"
+        access_token="AY04wcXo7dJ5mWrtRqoaVd105WpLFJeRM47xRWRDaxDMLKAvZgAAAAA"
         request_my_board= "https://api.pinterest.com/v1/me/pins/?access_token=" + access_token  + "&limit=60"
         request_others= "https://api.pinterest.com/v1/me/following/boards/?access_token=" + access_token
 
@@ -705,6 +706,7 @@ if social_network in network_list:
                 data= request.get('data',None)
                 for urls in data:
                     url=urls.get('url', None)
+                    print url
                     imagAPI.append(url)
 
                 # hacer las siguiente 60 peticiones
@@ -717,6 +719,7 @@ if social_network in network_list:
                 #     siguiente=request.get('page',None).get('next',None)
 
         getData(pets)
+        print "Datos de refactor: "
         print len(imagAPI)
 
 
@@ -744,13 +747,14 @@ if social_network in network_list:
             return fallos
 
         if version in version_list:
-            contadorFallos=0
+            contadorFallos = 0
             #defino los parametros necesarios para la peticion
             params={'event': version ,'name':'value','type':"general",'unit':"day",'interval':1}
             respuesta=x.request(['events/properties/values'], params, format='json')
 
             for x in respuesta:
                 resp=str(x)
+                #print resp
                 imagComp.append(resp)
             print len(imagComp)
 
@@ -758,7 +762,7 @@ if social_network in network_list:
             print fallos
 
             mpPinterest.track(fallos,"Fallos " + version + " imagenes",{"imagen":fallos, "version": version})
-            contadorFallos=contadorFallos/float(60)
+            contadorFallos=contadorFallos/float(245)
             print contadorFallos
             mpPinterest.track(contadorFallos, "Fallos totales " + version, {"numero fallos": contadorFallos})
 
