@@ -706,7 +706,6 @@ if social_network in network_list:
                 data= request.get('data',None)
                 for urls in data:
                     url=urls.get('url', None)
-                    print url
                     imagAPI.append(url)
 
                 # hacer las siguiente 60 peticiones
@@ -719,8 +718,6 @@ if social_network in network_list:
                 #     siguiente=request.get('page',None).get('next',None)
 
         getData(pets)
-        print "Datos de refactor: "
-        print len(imagAPI)
 
 
         ##########################################################################################################################################
@@ -759,7 +756,6 @@ if social_network in network_list:
             print len(imagComp)
 
             fallos=comp(imagAPI,imagComp)
-            print fallos
 
             mpPinterest.track(fallos,"Fallos " + version + " imagenes",{"imagen":fallos, "version": version})
             contadorFallos=contadorFallos/float(245)
