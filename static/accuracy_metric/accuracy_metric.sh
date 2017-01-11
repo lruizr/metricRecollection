@@ -105,45 +105,45 @@ PID=`echo $!`
 # #GOOGLE+
 # #---------#
 
-# echo "##################################################################"
-# echo "Realizando pruebas sobre el componente googleplus-timeline: metrica completitud version master"
-# python completitud_REFACTOR.py googleplus master
-# sleep 10
-# # pkill chrome
+echo "##################################################################"
+echo "Realizando pruebas sobre el componente googleplus-timeline: metrica completitud version master"
+python completitud_REFACTOR.py googleplus master
+sleep 10
+# pkill chrome
 
-# echo "##################################################################"
-# echo "Realizando pruebas sobre el componente googleplus-timeline: metrica completitud version latency"
-# python completitud_REFACTOR.py googleplus latency
-# sleep 10
-# # pkill chrome
+echo "##################################################################"
+echo "Realizando pruebas sobre el componente googleplus-timeline: metrica completitud version latency"
+python completitud_REFACTOR.py googleplus latency
+sleep 10
+# pkill chrome
 
-# echo "##################################################################"
-# echo "Realizando pruebas sobre el componente googleplus-timeline: metrica completitud version accuracy"
-# python completitud_REFACTOR.py googleplus accuracy
-# sleep 10
-# # pkill chrome
+echo "##################################################################"
+echo "Realizando pruebas sobre el componente googleplus-timeline: metrica completitud version accuracy"
+python completitud_REFACTOR.py googleplus accuracy
+sleep 10
+# pkill chrome
 
 #-------#
 # PINTEREST
 #-------#
 
-echo "##################################################################"
-echo "Realizando pruebas sobre el componente pinterest-timeline: metrica completitud version master"
-python completitud_REFACTOR.py pinterest master
-sleep 10
-# pkill chrome
+# echo "##################################################################"
+# echo "Realizando pruebas sobre el componente pinterest-timeline: metrica completitud version master"
+# python completitud_REFACTOR.py pinterest master
+# sleep 10
+# # pkill chrome
 
-echo "##################################################################"
-echo "Realizando pruebas sobre el componente pinterest-timeline: metrica completitud version latency"
-python completitud_REFACTOR.py pinterest latency
-sleep 10
-# pkill chrome
+# echo "##################################################################"
+# echo "Realizando pruebas sobre el componente pinterest-timeline: metrica completitud version latency"
+# python completitud_REFACTOR.py pinterest latency
+# sleep 10
+# # pkill chrome
 
-echo "##################################################################"
-echo "Realizando pruebas sobre el componente pinterest-timeline: metrica completitud version accuracy"
-python completitud_REFACTOR.py pinterest accuracy
-sleep 10
-# pkill chrome
+# echo "##################################################################"
+# echo "Realizando pruebas sobre el componente pinterest-timeline: metrica completitud version accuracy"
+# python completitud_REFACTOR.py pinterest accuracy
+# sleep 10
+# # pkill chrome
 
 # echo "##################################################################"
 # echo "##################################################################"
