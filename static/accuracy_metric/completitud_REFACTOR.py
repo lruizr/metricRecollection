@@ -252,13 +252,13 @@ if social_network in network_list:
 
         if version in version_list:
             if(version=="master"):
-                webbrowser.open_new(url_base_local + "/Master/facebook-wall/FacebookCompletitud.html")
+                webbrowser.open_new(url_base_local + "/Master/facebook-wall-accuracy/FacebookCompletitud.html")
                 sleep(5)
             elif(version=="latency"):
-                webbrowser.open_new(url_base_local + "/Latency/facebook-wall/FacebookCompletitudLatency.html")
+                webbrowser.open_new(url_base_local + "/Latency/facebook-wall-latency/FacebookCompletitudLatency.html")
                 sleep(5)
             elif(version=="accuracy"):
-                webbrowser.open_new(url_base_local + "/Accuracy/facebook-wall/FacebookCompletitudAccuracy.html")
+                webbrowser.open_new(url_base_local + "/Accuracy/facebook-wall-master/FacebookCompletitudAccuracy.html")
                 sleep(5)
 
         #es necesario cambiar el token cada hora y media: https://developers.facebook.com/tools/explorer/928341650551653 (Get User Access Token, version 2.3)
@@ -469,7 +469,7 @@ if social_network in network_list:
         sleep(5)
 
         #cambiar token cada hora y media: https://developers.google.com/+/web/api/rest/latest/activities/list?authuser=1
-        access_token="ya29.CjfRA5XVtJi0KfCc5fTkbpmY5c5W-pVOq-B-FtVi4gaFq_N4LNtHjQ7dsFoeRh8WQBBW6QFHNqy2"
+        access_token="ya29.CjfRAy3BDY8ImPxi3q-4nnMtNgWxrbQUnQ8qVrnf6Pw6ijc2FPFkvWX-Abrn0vh7ETtweU63pnqK"
         google_url_followers="https://www.googleapis.com/plus/v1/people/me/people/visible"
         headers = {"Authorization": "Bearer " + access_token}
 
