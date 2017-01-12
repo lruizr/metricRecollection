@@ -457,19 +457,19 @@ if social_network in network_list:
         ##########################################################################################################################################
         if version in version_list:
             if(version=="master"):
-                webbrowser.open_new(url_base_local + "/Master/googleplus-timeline-accuracy-defects/demo/GooglePlusCompletitud.html")
+                webbrowser.open_new(url_base_local + "/Master/googleplus-timeline-master/demo/GooglePlusCompletitud.html")
                 sleep(3)
             elif(version=="latency"):
                 webbrowser.open_new(url_base_local + "/Latency/googleplus-timeline-latency_defects/demo/GooglePlusCompletitudLatency.html")
                 sleep(3)
             elif(version=="accuracy"):
-                webbrowser.open_new(url_base_local + "/Accuracy/googleplus-timeline-master/demo/GooglePlusCompletitudAccuracy.html")
+                webbrowser.open_new(url_base_local + "/Accuracy/googleplus-timeline-accuracy_defects/demo/GooglePlusCompletitudAccuracy.html")
                 sleep(3)
 
         sleep(5)
 
         #cambiar token cada hora y media: https://developers.google.com/+/web/api/rest/latest/activities/list?authuser=1
-        access_token="ya29.CjfQA_sgGZXcaPC_auCp7MrRvp25GY-c2uH9ycnoc3FKgCe_gqF4HEXOuw2ZBlObIR9pVIEH_j6N"
+        access_token="ya29.CjfRA5XVtJi0KfCc5fTkbpmY5c5W-pVOq-B-FtVi4gaFq_N4LNtHjQ7dsFoeRh8WQBBW6QFHNqy2"
         google_url_followers="https://www.googleapis.com/plus/v1/people/me/people/visible"
         headers = {"Authorization": "Bearer " + access_token}
 
