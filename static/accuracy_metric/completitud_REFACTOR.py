@@ -252,7 +252,7 @@ if social_network in network_list:
 
         if version in version_list:
             if(version=="master"):
-                webbrowser.open_new(url_base_local + "/Master/facebook-wall-master/FacebookCompletitud.html")
+                webbrowser.open_new(url_base_local + "/Master/facebook-wall-stable/FacebookCompletitud.html")
                 sleep(5)
             elif(version=="latency"):
                 webbrowser.open_new(url_base_local + "/Latency/facebook-wall-latency/FacebookCompletitudLatency.html")
@@ -262,7 +262,7 @@ if social_network in network_list:
                 sleep(5)
 
         #es necesario cambiar el token cada hora y media: https://developers.facebook.com/tools/explorer/928341650551653 (Get User Access Token, version 2.3)
-        access_token="EAACEdEose0cBANCCjdPP1aHfUSlNVs4hkLanHqhZAVePqJBjksH41XZACZAMlSpysUZC0ZAog58RWBs3dOqtAZCIVYHlwrSaHQkpbO5K2bxRuFIapPiqS3s1Ixtp3lllBHZBtVFLSZAQ4Xqm64nIQhU2l4EGrRZAhEA5HFaki1YlsWAZDZD"
+        access_token="EAACEdEose0cBAEZBARegKThshbzNH2LQJcW1e0fkUdWiVpzERxQfupG2TgbpUXdHCzgV8JqTGgciZBp81nrmlaPZA640nqcPavwjZAnAdXw5avJfaGuIhuPJRBdPJYnHuLucYudHAlRLHZA8jZADVqmE3SkgRBZAv2kdUdz2jZCZCdQZDZD"
         facebook_url = "https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=" + access_token
 
         #Request timeline home
@@ -469,7 +469,7 @@ if social_network in network_list:
         sleep(5)
 
         #cambiar token cada hora y media: https://developers.google.com/+/web/api/rest/latest/activities/list?authuser=1
-        access_token="ya29.CjfRAy3BDY8ImPxi3q-4nnMtNgWxrbQUnQ8qVrnf6Pw6ijc2FPFkvWX-Abrn0vh7ETtweU63pnqK"
+        access_token="ya29.CjfSA5Whx-9OzeKzz-a79PCHeWV7nbCHmsBcFCJBx78h9LJzlIt00bT_LIaEc9rr5Twvt0JLI1Go"
         google_url_followers="https://www.googleapis.com/plus/v1/people/me/people/visible"
         headers = {"Authorization": "Bearer " + access_token}
 
@@ -624,7 +624,8 @@ if social_network in network_list:
                         listaFallosText=zip(liskey,lisvalue)
                         contadorFallos=contadorFallos+1
                         #mpGoogle.track(listaFallosText,"Fallos " + version +" text",{"posicion":listaFallosText, "version":version})
-
+            print "Fallos = " + str(contadorFallos)
+            print "Numero de mensajes: " + str(contador)
             contadorFallos=contadorFallos/float(contador)
             print contadorFallos
             mpGoogle.track(contadorFallos, "Fallos totales " + version, {"numero fallos": contadorFallos})
