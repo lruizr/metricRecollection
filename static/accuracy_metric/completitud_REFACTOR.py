@@ -252,17 +252,17 @@ if social_network in network_list:
 
         if version in version_list:
             if(version=="master"):
-                webbrowser.open_new(url_base_local + "/Master/facebook-wall-accuracy/FacebookCompletitud.html")
+                webbrowser.open_new(url_base_local + "/Master/facebook-wall-master/FacebookCompletitud.html")
                 sleep(5)
             elif(version=="latency"):
                 webbrowser.open_new(url_base_local + "/Latency/facebook-wall-latency/FacebookCompletitudLatency.html")
                 sleep(5)
             elif(version=="accuracy"):
-                webbrowser.open_new(url_base_local + "/Accuracy/facebook-wall-master/FacebookCompletitudAccuracy.html")
+                webbrowser.open_new(url_base_local + "/Accuracy/facebook-wall-accuracy/FacebookCompletitudAccuracy.html")
                 sleep(5)
 
         #es necesario cambiar el token cada hora y media: https://developers.facebook.com/tools/explorer/928341650551653 (Get User Access Token, version 2.3)
-        access_token="EAACEdEose0cBAGryQbpTZBZBWhm8iIOqwHfwBqG1YVN0nDdpnBS1K3EvAwrbYxoPRtHgwjvxhkWSRxcrksF3a6oiLjwO7mKVqNfusd5IaJzjJXw3MI8UUVTDPLBvqjW0IjO0ixyE3kjmLymB39fxVnCburdfRKNpzpUjJfagZDZD"
+        access_token="EAACEdEose0cBANCCjdPP1aHfUSlNVs4hkLanHqhZAVePqJBjksH41XZACZAMlSpysUZC0ZAog58RWBs3dOqtAZCIVYHlwrSaHQkpbO5K2bxRuFIapPiqS3s1Ixtp3lllBHZBtVFLSZAQ4Xqm64nIQhU2l4EGrRZAhEA5HFaki1YlsWAZDZD"
         facebook_url = "https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=" + access_token
 
         #Request timeline home

@@ -82,22 +82,22 @@ PID=`echo $!`
 #FACEBOOK
 #---------#
 
-# echo "##################################################################"
-# echo "Realizando pruebas sobre el componente facebook-wall: metrica completitud version master"
-# python completitud_REFACTOR.py facebook master
-# sleep 10
-# # pkill chrome
+echo "##################################################################"
+echo "Realizando pruebas sobre el componente facebook-wall: metrica completitud version master"
+python completitud_REFACTOR.py facebook master
+sleep 10
+# pkill chrome
 
-# echo "##################################################################"
-# echo "Realizando pruebas sobre el componente facebook-wall: metrica completitud version latency"
-# python completitud_REFACTOR.py facebook latency
-# sleep 10
-# # pkill chrome
+echo "##################################################################"
+echo "Realizando pruebas sobre el componente facebook-wall: metrica completitud version latency"
+python completitud_REFACTOR.py facebook latency
+sleep 10
+# pkill chrome
 
-# echo "##################################################################"
-# echo "Realizando pruebas sobre el componente facebook-wall: metrica completitud version accuracy"
-# python completitud_REFACTOR.py facebook accuracy
-# sleep 10
+echo "##################################################################"
+echo "Realizando pruebas sobre el componente facebook-wall: metrica completitud version accuracy"
+python completitud_REFACTOR.py facebook accuracy
+sleep 10
 # pkill chrome
 
 
@@ -105,22 +105,22 @@ PID=`echo $!`
 # #GOOGLE+
 # #---------#
 
-echo "##################################################################"
-echo "Realizando pruebas sobre el componente googleplus-timeline: metrica completitud version master"
-python completitud_REFACTOR.py googleplus master
-sleep 10
-# pkill chrome
+# echo "##################################################################"
+# echo "Realizando pruebas sobre el componente googleplus-timeline: metrica completitud version master"
+# python completitud_REFACTOR.py googleplus master
+# sleep 10
+# # pkill chrome
 
-echo "##################################################################"
-echo "Realizando pruebas sobre el componente googleplus-timeline: metrica completitud version latency"
-python completitud_REFACTOR.py googleplus latency
-sleep 10
-# pkill chrome
+# echo "##################################################################"
+# echo "Realizando pruebas sobre el componente googleplus-timeline: metrica completitud version latency"
+# python completitud_REFACTOR.py googleplus latency
+# sleep 10
+# # pkill chrome
 
-echo "##################################################################"
-echo "Realizando pruebas sobre el componente googleplus-timeline: metrica completitud version accuracy"
-python completitud_REFACTOR.py googleplus accuracy
-sleep 10
+# echo "##################################################################"
+# echo "Realizando pruebas sobre el componente googleplus-timeline: metrica completitud version accuracy"
+# python completitud_REFACTOR.py googleplus accuracy
+# sleep 10
 # pkill chrome
 
 #-------#
