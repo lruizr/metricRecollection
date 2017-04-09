@@ -1,0 +1,74 @@
+bower check-new     Checking for new versions of the project dependencies...
+facebook-wall#1.0.0 /home/ailm/repos/metricRecollection/static/latency_metric/Accuracy/facebook-wall
+├─┬ iron-ajax#1.4.3
+│ ├── polymer#1.7.0 (1.7.1 available)
+│ └─┬ promise-polyfill#1.0.1
+│   └─┬ polymer#1.7.0 (1.7.1 available)
+│     └── webcomponentsjs#0.7.23
+├─┬ iron-icon#1.0.12
+│ ├─┬ iron-flex-layout#1.3.1
+│ │ └── polymer#1.7.0
+│ ├─┬ iron-meta#1.1.2
+│ │ └── polymer#1.7.0 (1.7.1 available)
+│ └── polymer#1.7.0 (1.7.1 available)
+├─┬ iron-icons#1.2.0
+│ ├── iron-icon#1.0.12
+│ ├─┬ iron-iconset-svg#1.1.0
+│ │ ├─┬ iron-meta#1.1.2
+│ │ │ └── polymer#1.7.0
+│ │ └── polymer#1.7.0
+│ └── polymer#1.7.0
+├── mocha#2.5.3 incompatible with ~1.14.0 (1.14.0 available, latest is 3.2.0)
+├── paper-behaviors#1.0.12
+├─┬ paper-button#1.0.14
+│ ├─┬ iron-flex-layout#1.3.1
+│ │ └── polymer#1.7.0
+│ ├── paper-behaviors#1.0.12
+│ ├── paper-material#1.0.6
+│ └── polymer#1.7.0
+├─┬ paper-header-panel#1.1.7
+│ ├─┬ iron-flex-layout#1.3.1
+│ │ └── polymer#1.7.0
+│ └── polymer#1.7.0
+├─┬ paper-icon-button#1.1.4
+│ ├── iron-icon#1.0.12
+│ ├─┬ paper-behaviors#1.0.12
+│ │ ├─┬ iron-behaviors#1.0.17
+│ │ │ ├─┬ iron-a11y-keys-behavior#1.1.9
+│ │ │ │ └── polymer#1.7.0
+│ │ │ └── polymer#1.7.0
+│ │ ├─┬ iron-checked-element-behavior#1.0.5
+│ │ │ ├─┬ iron-form-element-behavior#1.0.6
+│ │ │ │ └── polymer#1.7.0
+│ │ │ ├─┬ iron-validatable-behavior#1.1.1
+│ │ │ │ ├─┬ iron-meta#1.1.2
+│ │ │ │ │ └── polymer#1.7.0
+│ │ │ │ └── polymer#1.7.0
+│ │ │ └── polymer#1.7.0
+│ │ ├─┬ paper-ripple#1.0.10
+│ │ │ ├── iron-a11y-keys-behavior#1.1.9
+│ │ │ └── polymer#1.7.0
+│ │ └── polymer#1.7.0
+│ ├── paper-styles#1.1.5
+│ └── polymer#1.7.0
+├─┬ paper-material#1.0.6
+│ ├── paper-styles#1.1.5
+│ └── polymer#1.7.0
+├─┬ paper-styles#1.1.5
+│ ├── font-roboto#1.0.1
+│ ├─┬ iron-flex-layout#1.3.1
+│ │ └── polymer#1.7.0
+│ └── polymer#1.7.0
+├── polymer-test-tools#6363f44a22
+├── sinon#e-tag:57dfd9a0-
+├── test-fixture#1.1.1
+└─┬ web-component-tester#4.2.2 (latest is 6.0.0-prerelease.1)
+  ├── accessibility-developer-tools#2.11.0
+  ├── async#1.5.2 (latest is 2.1.4)
+  ├── chai#3.5.0 (latest is 4.0.0-canary.1)
+  ├── lodash#3.10.1 (3.11.0-npm-packages available, latest is 4.17.2)
+  ├── mocha#2.5.3 (latest is 3.2.0)
+  ├── sinon-chai#2.8.0
+  ├── sinonjs#1.17.1
+  ├── stacky#1.3.2
+  └── test-fixture#1.1.1

@@ -1,13 +1,3 @@
-<!--
-@license
-Copyright (c) 2014 The Polymer Project Authors. All rights reserved.
-This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
-The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
-The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
-Code distributed by Google as part of the polymer project is also
-subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
--->
-<!doctype html>
 <html>
   <head>
     <!-- start Mixpanel -->
@@ -15,47 +5,45 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
       for(g=0;g<i.length;g++)f(c,i[g]);b._i.push([a,e,d])};b.__SV=1.2;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f)}})(document,window.mixpanel||[]);
     mixpanel.init("53da31965c3d047fa72de756aae43db1");
     </script><!-- end Mixpanel -->
-    
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
-    <title>Twitter-timeline Latency Tracker</title>
 
-    <script src="twitter-timeline/bower_components/webcomponentsjs/webcomponents.min.js"></script>
-    <link rel="import" href="twitter-timeline/static/twitter-timeline.html">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+    <title>Open-weather Latency Tracker</title>
+    <script src="open-weather/bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="open-weather/open-weather.html">
   </head>
-  
   <body unresolved>
-    <template id="Demo" is="dom-bind" >
-      <p><code>&lt;twitter-timeline&gt;</code> Latency Tracker</p>
-      <twitter-timeline id="componentTested" endpoint="https://centauro.ls.fi.upm.es/api/aux/twitterTimeline" access-token="3072043347-T00ESRJtzlqHnGRNJZxrBP3IDV0S8c1uGIn1vWf" secret-token="OBPFI8deR6420txM1kCJP9eW59Xnbpe5NCbPgOlSJRock" consumer-key=" BOySBn8XHlyYDQiGiqZ1tzllx" consumer-secret="xeSw5utUJmNOt5vdZZy8cllLegg91vqlzRitJEMt5zT7DtRcHE" count="200" language="{{language}}" component_base="twitter-timeline/static/">
-      <br>
+    <p><code>&lt;open-weather&gt;</code> Latency Tracker</p>
+    <template id="Demo" is="dom-bind">  
+      <open-weather id="componentTested" lat="40.4893538421231" lon="-3.6827461557" units="metric" language="es"
+      app-id="655f716c02b3f0aceac9e3567cfb46a8"
+      >
+      </open-weather>
+      </br></br>
       <button name="es" on-click="changeIdiom">Spanish</button>
       <button name="en" on-click="changeIdiom">English</button>
-      <br>
-      <!-- <button on-click="trackRequests"> Track </button> -->
     </template>
-      <script>
-      </script>
-    <script type="text/javascript">
-      //We set an define the language of the component
+    <script>
       Demo.language = "es";
       Demo.changeIdiom = function(event,detail) {
         Demo.language = event.target.getAttribute('name');
       }
 
       function getParameterByName(name, url) {
-        if (!url) url = window.location.href;
-        url = url.toLowerCase(); // This is just to avoid case sensitiveness  
-        name = name.replace(/[\[\]]/g, "\\$&").toLowerCase();// This is just to avoid case sensitiveness for query parameter name
-        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-        results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
-      }      
+          if (!url) url = window.location.href;
+          url = url.toLowerCase(); // This is just to avoid case sensitiveness  
+          name = name.replace(/[\[\]]/g, "\\$&").toLowerCase();// This is just to avoid case sensitiveness for query parameter name
+          var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+          results = regex.exec(url);
+          if (!results) return null;
+          if (!results[2]) return '';
+          return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+
       trackEvents = function(componentName, version, endpoint){
         var timestamp = Date.now();
         var resourceList = performance.getEntriesByType("resource");
-        //console.log(resourceList);
+        console.log(resourceList);
         //We search for the request done to the endpoint desired
         for (var i = 0; i<resourceList.length; i++) {
           if(resourceList[i].initiatorType === "xmlhttprequest" && resourceList[i].name.match(endpoint)!= null){
@@ -78,9 +66,10 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
       //We send the desired time events after a fixed period of time
       window.setTimeout(function() {
-        var componentName = document.getElementById("componentTested").tagName;
-        var endpoint = document.getElementsByTagName(componentName)[0].getAttribute("endpoint");
-        trackEvents(componentName, "accuracy_defects", endpoint);
+        var component = document.getElementById("componentTested");
+        var componentName = component.tagName;
+        var endpoint = "https://centauro.ls.fi.upm.es:4444/weather"
+        trackEvents(componentName, "accuracy", endpoint);
       },5000);
     </script>
   </body>
