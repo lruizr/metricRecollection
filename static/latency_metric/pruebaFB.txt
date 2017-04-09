@@ -1,0 +1,256 @@
+3214
+##################################################################
+Realizando pruebas sobre el componente facebook-wall...
+Se ha abierto una nueva ventana en la sesión actual del navegador.
+Request time  1038.68103027
+Se ha abierto una nueva ventana en la sesión actual del navegador.
+##################################################################
+Recolectando y calculando métrica de latencia sobre los componentes probados...
+ ### COMPONENTE  facebook-wall   ###
+>>> Calculando métricas de latencia de experimentos realizados desde 2016-12-06 hasta 2016-12-12
+{u'1481576115.84': {u'requestDuration': 817.0721530914307, u'experiment': u'1481576115.84', u'$lib_version': u'4.3.1', u'time': 1481547316, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAC1khZAMuHEzWntB549VuNgAZByAyem1ZCIkMqhCBTL1NZAH82HQpL0kS4EXMKAbSCQOrHFIee36sPT5FspsEMb9Af6SoZCFhbZCTwAJw6QpJMrXucyv4OFxph5FbuzzUWQpwoQxgXueuJ0AiJZCyHsw0cc8geFoAZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481575488.81': {u'requestDuration': 796.3061332702637, u'experiment': u'1481575488.81', u'$lib_version': u'4.3.1', u'time': 1481546689, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAC1khZAMuHEzWntB549VuNgAZByAyem1ZCIkMqhCBTL1NZAH82HQpL0kS4EXMKAbSCQOrHFIee36sPT5FspsEMb9Af6SoZCFhbZCTwAJw6QpJMrXucyv4OFxph5FbuzzUWQpwoQxgXueuJ0AiJZCyHsw0cc8geFoAZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481574813.69': {u'requestDuration': 819.7660446166992, u'experiment': u'1481574813.69', u'$lib_version': u'4.3.1', u'time': 1481546014, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAC1khZAMuHEzWntB549VuNgAZByAyem1ZCIkMqhCBTL1NZAH82HQpL0kS4EXMKAbSCQOrHFIee36sPT5FspsEMb9Af6SoZCFhbZCTwAJw6QpJMrXucyv4OFxph5FbuzzUWQpwoQxgXueuJ0AiJZCyHsw0cc8geFoAZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481573497.2': {u'requestDuration': 797.152042388916, u'experiment': u'1481573497.2', u'$lib_version': u'4.3.1', u'time': 1481544698, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAMxwTzOZAm7CasjOZCgfitnCAUUNIRFd71WnalMIH46PRo1kdQNAVnIOrUGim07rP7xOciKsiqcRGPfEuCV1ZAJjmc5OIkBZBd5TEPQPyzuZB5vZAVoNeZBxO4nmBdkMsz9xMXVo1a4HJSm1RxLytZBd6KOZAIU4VhAZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}}
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481576115.84
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481575488.81
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481574813.69
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481573497.2
+---------------------------------------
+>>> El experimento 1481573497.2 con la comparacion latency_defects vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+---------------------------------------
+>>> El experimento 1481573497.2 con la comparacion stable vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+Métricas calculadas
+3919
+##################################################################
+Realizando pruebas sobre el componente facebook-wall...
+Se ha abierto una nueva ventana en la sesión actual del navegador.
+Request time  768.023967743
+Se ha abierto una nueva ventana en la sesión actual del navegador.
+##################################################################
+Recolectando y calculando métrica de latencia sobre los componentes probados...
+ ### COMPONENTE  facebook-wall   ###
+>>> Calculando métricas de latencia de experimentos realizados desde 2016-12-13 hasta 2016-12-13
+{u'1481621720.34': {u'requestDuration': 4841.434955596924, u'experiment': u'1481621720.34', u'$lib_version': u'4.3.0', u'time': 1481592925, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBACGSLSjaRES7NHTaCtF4JhRX6KPqoHq7hI5smrfKILNXJosmsLZCeqwduQRKiolYxu5OJluwvm2mqpnxekoiCRLu5zsjGTcpsHxs4Rd32ZAMHGqu3ZCFwtidJQShwZB7RzZCxnBqKuZAxRE1VvwTPsiq55UhOXrwZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481630815.79': {u'requestDuration': 2236.021995544434, u'experiment': u'1481630815.79', u'$lib_version': u'4.3.0', u'time': 1481602018, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAGZBVDYSsHCrdvgoJtCk7j9xxrUQKwAMHJSnEOaX2hwpz5L6Dg21J8zwDmPMmdIRzwKbVlBHK7SgILKDOh2RzHxIrxgL8X4SqNN2nETfkSYhWQXbAh8JLnZAf1gK9iDvPVGJfGNwdG0Ez4xjBoxWxba9Je0AZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481630418.06': {u'requestDuration': 2306.817054748535, u'experiment': u'1481630418.06', u'$lib_version': u'4.3.0', u'time': 1481601620, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAGZBVDYSsHCrdvgoJtCk7j9xxrUQKwAMHJSnEOaX2hwpz5L6Dg21J8zwDmPMmdIRzwKbVlBHK7SgILKDOh2RzHxIrxgL8X4SqNN2nETfkSYhWQXbAh8JLnZAf1gK9iDvPVGJfGNwdG0Ez4xjBoxWxba9Je0AZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481658117.17': {u'requestDuration': 768.0239677429199, u'experiment': u'1481658117.17', u'$lib_version': u'4.3.1', u'time': 1481629317, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAIoateGlRtsn95bGukvVY0ZCJSvxPp27bsw5tPI6F6HHqqtZBeRgwWOhJGBQqJbPkMR4UwYnzI48ZAuk6KCLxnhaq4TYgYjhcvwF3d1X3usrdO7XC8nAmIrUMYt9ZCeA6aZATuHItdyUwozATIrgj85G6YKPL3QZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481629303.43': {u'requestDuration': 2522.42112159729, u'experiment': u'1481629303.43', u'$lib_version': u'4.3.0', u'time': 1481600505, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAGZBVDYSsHCrdvgoJtCk7j9xxrUQKwAMHJSnEOaX2hwpz5L6Dg21J8zwDmPMmdIRzwKbVlBHK7SgILKDOh2RzHxIrxgL8X4SqNN2nETfkSYhWQXbAh8JLnZAf1gK9iDvPVGJfGNwdG0Ez4xjBoxWxba9Je0AZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481629584.22': {u'requestDuration': 1800.3249168396, u'experiment': u'1481629584.22', u'$lib_version': u'4.3.0', u'time': 1481600786, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAGZBVDYSsHCrdvgoJtCk7j9xxrUQKwAMHJSnEOaX2hwpz5L6Dg21J8zwDmPMmdIRzwKbVlBHK7SgILKDOh2RzHxIrxgL8X4SqNN2nETfkSYhWQXbAh8JLnZAf1gK9iDvPVGJfGNwdG0Ez4xjBoxWxba9Je0AZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481657698.69': {u'requestDuration': 1038.681030273438, u'experiment': u'1481657698.69', u'$lib_version': u'4.3.1', u'time': 1481628899, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAIoateGlRtsn95bGukvVY0ZCJSvxPp27bsw5tPI6F6HHqqtZBeRgwWOhJGBQqJbPkMR4UwYnzI48ZAuk6KCLxnhaq4TYgYjhcvwF3d1X3usrdO7XC8nAmIrUMYt9ZCeA6aZATuHItdyUwozATIrgj85G6YKPL3QZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}}
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481621720.34
+---------------------------------------
+>>> Tag de la comparación:  stable vs host
+>>> Diferencia de latencia:  -3079.3449556
+>>> Envio resultados a Mixpanel...
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481630815.79
+---------------------------------------
+>>> Tag de la comparación:  stable vs host
+>>> Diferencia de latencia:  -236.911995544
+>>> Envio resultados a Mixpanel...
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481630418.06
+---------------------------------------
+>>> Tag de la comparación:  stable vs host
+>>> Diferencia de latencia:  -382.517054749
+>>> Envio resultados a Mixpanel...
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481658117.17
+---------------------------------------
+>>> Tag de la comparación:  latency_defects vs host
+>>> Diferencia de latencia:  -34.1139677429
+>>> Envio resultados a Mixpanel...
+---------------------------------------
+>>> Tag de la comparación:  stable vs host
+>>> Diferencia de latencia:  -14.5089677429
+>>> Envio resultados a Mixpanel...
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481629303.43
+---------------------------------------
+>>> Tag de la comparación:  stable vs host
+>>> Diferencia de latencia:  -568.151121597
+>>> Envio resultados a Mixpanel...
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481629584.22
+---------------------------------------
+>>> Tag de la comparación:  stable vs host
+>>> Diferencia de latencia:  190.73008316
+>>> Envio resultados a Mixpanel...
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481657698.69
+---------------------------------------
+>>> Tag de la comparación:  latency_defects vs host
+>>> Diferencia de latencia:  -318.241030273
+>>> Envio resultados a Mixpanel...
+Métricas calculadas
+5212
+##################################################################
+Realizando pruebas sobre el componente facebook-wall...
+Se ha abierto una nueva ventana en la sesión actual del navegador.
+Request time  696.788072586
+Se ha abierto una nueva ventana en la sesión actual del navegador.
+##################################################################
+Recolectando y calculando métrica de latencia sobre los componentes probados...
+ ### COMPONENTE  facebook-wall   ###
+>>> Calculando métricas de latencia de experimentos realizados desde 2016-12-13 hasta 2016-12-13
+{u'1481621720.34': {u'requestDuration': 4841.434955596924, u'experiment': u'1481621720.34', u'$lib_version': u'4.3.0', u'time': 1481592925, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBACGSLSjaRES7NHTaCtF4JhRX6KPqoHq7hI5smrfKILNXJosmsLZCeqwduQRKiolYxu5OJluwvm2mqpnxekoiCRLu5zsjGTcpsHxs4Rd32ZAMHGqu3ZCFwtidJQShwZB7RzZCxnBqKuZAxRE1VvwTPsiq55UhOXrwZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481630815.79': {u'requestDuration': 2236.021995544434, u'experiment': u'1481630815.79', u'$lib_version': u'4.3.0', u'time': 1481602018, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAGZBVDYSsHCrdvgoJtCk7j9xxrUQKwAMHJSnEOaX2hwpz5L6Dg21J8zwDmPMmdIRzwKbVlBHK7SgILKDOh2RzHxIrxgL8X4SqNN2nETfkSYhWQXbAh8JLnZAf1gK9iDvPVGJfGNwdG0Ez4xjBoxWxba9Je0AZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481630418.06': {u'requestDuration': 2306.817054748535, u'experiment': u'1481630418.06', u'$lib_version': u'4.3.0', u'time': 1481601620, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAGZBVDYSsHCrdvgoJtCk7j9xxrUQKwAMHJSnEOaX2hwpz5L6Dg21J8zwDmPMmdIRzwKbVlBHK7SgILKDOh2RzHxIrxgL8X4SqNN2nETfkSYhWQXbAh8JLnZAf1gK9iDvPVGJfGNwdG0Ez4xjBoxWxba9Je0AZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481658117.17': {u'requestDuration': 768.0239677429199, u'experiment': u'1481658117.17', u'$lib_version': u'4.3.1', u'time': 1481629317, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAIoateGlRtsn95bGukvVY0ZCJSvxPp27bsw5tPI6F6HHqqtZBeRgwWOhJGBQqJbPkMR4UwYnzI48ZAuk6KCLxnhaq4TYgYjhcvwF3d1X3usrdO7XC8nAmIrUMYt9ZCeA6aZATuHItdyUwozATIrgj85G6YKPL3QZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481629303.43': {u'requestDuration': 2522.42112159729, u'experiment': u'1481629303.43', u'$lib_version': u'4.3.0', u'time': 1481600505, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAGZBVDYSsHCrdvgoJtCk7j9xxrUQKwAMHJSnEOaX2hwpz5L6Dg21J8zwDmPMmdIRzwKbVlBHK7SgILKDOh2RzHxIrxgL8X4SqNN2nETfkSYhWQXbAh8JLnZAf1gK9iDvPVGJfGNwdG0Ez4xjBoxWxba9Je0AZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481629584.22': {u'requestDuration': 1800.3249168396, u'experiment': u'1481629584.22', u'$lib_version': u'4.3.0', u'time': 1481600786, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAGZBVDYSsHCrdvgoJtCk7j9xxrUQKwAMHJSnEOaX2hwpz5L6Dg21J8zwDmPMmdIRzwKbVlBHK7SgILKDOh2RzHxIrxgL8X4SqNN2nETfkSYhWQXbAh8JLnZAf1gK9iDvPVGJfGNwdG0Ez4xjBoxWxba9Je0AZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481657698.69': {u'requestDuration': 1038.681030273438, u'experiment': u'1481657698.69', u'$lib_version': u'4.3.1', u'time': 1481628899, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAIoateGlRtsn95bGukvVY0ZCJSvxPp27bsw5tPI6F6HHqqtZBeRgwWOhJGBQqJbPkMR4UwYnzI48ZAuk6KCLxnhaq4TYgYjhcvwF3d1X3usrdO7XC8nAmIrUMYt9ZCeA6aZATuHItdyUwozATIrgj85G6YKPL3QZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481660971.16': {u'requestDuration': 696.7880725860596, u'experiment': u'1481660971.16', u'$lib_version': u'4.3.1', u'time': 1481632171, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAIoateGlRtsn95bGukvVY0ZCJSvxPp27bsw5tPI6F6HHqqtZBeRgwWOhJGBQqJbPkMR4UwYnzI48ZAuk6KCLxnhaq4TYgYjhcvwF3d1X3usrdO7XC8nAmIrUMYt9ZCeA6aZATuHItdyUwozATIrgj85G6YKPL3QZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}}
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481621720.34
+---------------------------------------
+>>> El experimento 1481621720.34 con la comparacion stable vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481630815.79
+---------------------------------------
+>>> El experimento 1481630815.79 con la comparacion stable vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481630418.06
+---------------------------------------
+>>> El experimento 1481630418.06 con la comparacion stable vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481658117.17
+---------------------------------------
+>>> El experimento 1481658117.17 con la comparacion latency_defects vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+---------------------------------------
+>>> El experimento 1481658117.17 con la comparacion stable vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481629303.43
+---------------------------------------
+>>> El experimento 1481629303.43 con la comparacion stable vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481629584.22
+---------------------------------------
+>>> El experimento 1481629584.22 con la comparacion stable vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481657698.69
+---------------------------------------
+>>> El experimento 1481657698.69 con la comparacion latency_defects vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481660971.16
+---------------------------------------
+>>> Tag de la comparación:  latency_defects vs host
+>>> Diferencia de latencia:  -21.2930725861
+>>> Envio resultados a Mixpanel...
+---------------------------------------
+>>> Tag de la comparación:  stable vs host
+>>> Diferencia de latencia:  -148.183072586
+>>> Envio resultados a Mixpanel...
+Métricas calculadas
+6205
+##################################################################
+Realizando pruebas sobre el componente facebook-wall...
+Se ha abierto una nueva ventana en la sesión actual del navegador.
+Request time  540.811061859
+Se ha abierto una nueva ventana en la sesión actual del navegador.
+##################################################################
+Recolectando y calculando métrica de latencia sobre los componentes probados...
+ ### COMPONENTE  facebook-wall   ###
+>>> Calculando métricas de latencia de experimentos realizados desde 2016-12-13 hasta 2016-12-13
+{u'1481621720.34': {u'requestDuration': 4841.434955596924, u'experiment': u'1481621720.34', u'$lib_version': u'4.3.0', u'time': 1481592925, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBACGSLSjaRES7NHTaCtF4JhRX6KPqoHq7hI5smrfKILNXJosmsLZCeqwduQRKiolYxu5OJluwvm2mqpnxekoiCRLu5zsjGTcpsHxs4Rd32ZAMHGqu3ZCFwtidJQShwZB7RzZCxnBqKuZAxRE1VvwTPsiq55UhOXrwZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481630815.79': {u'requestDuration': 2236.021995544434, u'experiment': u'1481630815.79', u'$lib_version': u'4.3.0', u'time': 1481602018, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAGZBVDYSsHCrdvgoJtCk7j9xxrUQKwAMHJSnEOaX2hwpz5L6Dg21J8zwDmPMmdIRzwKbVlBHK7SgILKDOh2RzHxIrxgL8X4SqNN2nETfkSYhWQXbAh8JLnZAf1gK9iDvPVGJfGNwdG0Ez4xjBoxWxba9Je0AZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481630418.06': {u'requestDuration': 2306.817054748535, u'experiment': u'1481630418.06', u'$lib_version': u'4.3.0', u'time': 1481601620, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAGZBVDYSsHCrdvgoJtCk7j9xxrUQKwAMHJSnEOaX2hwpz5L6Dg21J8zwDmPMmdIRzwKbVlBHK7SgILKDOh2RzHxIrxgL8X4SqNN2nETfkSYhWQXbAh8JLnZAf1gK9iDvPVGJfGNwdG0Ez4xjBoxWxba9Je0AZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481658117.17': {u'requestDuration': 768.0239677429199, u'experiment': u'1481658117.17', u'$lib_version': u'4.3.1', u'time': 1481629317, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAIoateGlRtsn95bGukvVY0ZCJSvxPp27bsw5tPI6F6HHqqtZBeRgwWOhJGBQqJbPkMR4UwYnzI48ZAuk6KCLxnhaq4TYgYjhcvwF3d1X3usrdO7XC8nAmIrUMYt9ZCeA6aZATuHItdyUwozATIrgj85G6YKPL3QZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481629303.43': {u'requestDuration': 2522.42112159729, u'experiment': u'1481629303.43', u'$lib_version': u'4.3.0', u'time': 1481600505, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAGZBVDYSsHCrdvgoJtCk7j9xxrUQKwAMHJSnEOaX2hwpz5L6Dg21J8zwDmPMmdIRzwKbVlBHK7SgILKDOh2RzHxIrxgL8X4SqNN2nETfkSYhWQXbAh8JLnZAf1gK9iDvPVGJfGNwdG0Ez4xjBoxWxba9Je0AZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481629584.22': {u'requestDuration': 1800.3249168396, u'experiment': u'1481629584.22', u'$lib_version': u'4.3.0', u'time': 1481600786, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAGZBVDYSsHCrdvgoJtCk7j9xxrUQKwAMHJSnEOaX2hwpz5L6Dg21J8zwDmPMmdIRzwKbVlBHK7SgILKDOh2RzHxIrxgL8X4SqNN2nETfkSYhWQXbAh8JLnZAf1gK9iDvPVGJfGNwdG0Ez4xjBoxWxba9Je0AZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481657698.69': {u'requestDuration': 1038.681030273438, u'experiment': u'1481657698.69', u'$lib_version': u'4.3.1', u'time': 1481628899, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAIoateGlRtsn95bGukvVY0ZCJSvxPp27bsw5tPI6F6HHqqtZBeRgwWOhJGBQqJbPkMR4UwYnzI48ZAuk6KCLxnhaq4TYgYjhcvwF3d1X3usrdO7XC8nAmIrUMYt9ZCeA6aZATuHItdyUwozATIrgj85G6YKPL3QZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481662143.8': {u'requestDuration': 540.8110618591309, u'experiment': u'1481662143.8', u'$lib_version': u'4.3.1', u'time': 1481633344, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAIoateGlRtsn95bGukvVY0ZCJSvxPp27bsw5tPI6F6HHqqtZBeRgwWOhJGBQqJbPkMR4UwYnzI48ZAuk6KCLxnhaq4TYgYjhcvwF3d1X3usrdO7XC8nAmIrUMYt9ZCeA6aZATuHItdyUwozATIrgj85G6YKPL3QZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481660971.16': {u'requestDuration': 696.7880725860596, u'experiment': u'1481660971.16', u'$lib_version': u'4.3.1', u'time': 1481632171, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAIoateGlRtsn95bGukvVY0ZCJSvxPp27bsw5tPI6F6HHqqtZBeRgwWOhJGBQqJbPkMR4UwYnzI48ZAuk6KCLxnhaq4TYgYjhcvwF3d1X3usrdO7XC8nAmIrUMYt9ZCeA6aZATuHItdyUwozATIrgj85G6YKPL3QZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}}
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481621720.34
+---------------------------------------
+>>> El experimento 1481621720.34 con la comparacion stable vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481630815.79
+---------------------------------------
+>>> El experimento 1481630815.79 con la comparacion stable vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481630418.06
+---------------------------------------
+>>> El experimento 1481630418.06 con la comparacion stable vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481658117.17
+---------------------------------------
+>>> El experimento 1481658117.17 con la comparacion latency_defects vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+---------------------------------------
+>>> El experimento 1481658117.17 con la comparacion stable vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481629303.43
+---------------------------------------
+>>> El experimento 1481629303.43 con la comparacion stable vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481629584.22
+---------------------------------------
+>>> El experimento 1481629584.22 con la comparacion stable vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481657698.69
+---------------------------------------
+>>> El experimento 1481657698.69 con la comparacion latency_defects vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481662143.8
+---------------------------------------
+>>> Tag de la comparación:  latency_defects vs host
+>>> Diferencia de latencia:  -34.1510618591
+>>> Envio resultados a Mixpanel...
+---------------------------------------
+>>> Tag de la comparación:  stable vs host
+>>> Diferencia de latencia:  -69.1060618591
+>>> Envio resultados a Mixpanel...
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481660971.16
+---------------------------------------
+>>> El experimento 1481660971.16 con la comparacion latency_defects vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+---------------------------------------
+>>> El experimento 1481660971.16 con la comparacion stable vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+Métricas calculadas
+6834
+##################################################################
+Realizando pruebas sobre el componente facebook-wall...
+Se ha abierto una nueva ventana en la sesión actual del navegador.
+Request time  596.461057663
+Se ha abierto una nueva ventana en la sesión actual del navegador.
+##################################################################
+Recolectando y calculando métrica de latencia sobre los componentes probados...
+ ### COMPONENTE  facebook-wall   ###
+>>> Calculando métricas de latencia de experimentos realizados desde 2016-12-13 hasta 2016-12-13
+{u'1481621720.34': {u'requestDuration': 4841.434955596924, u'experiment': u'1481621720.34', u'$lib_version': u'4.3.0', u'time': 1481592925, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBACGSLSjaRES7NHTaCtF4JhRX6KPqoHq7hI5smrfKILNXJosmsLZCeqwduQRKiolYxu5OJluwvm2mqpnxekoiCRLu5zsjGTcpsHxs4Rd32ZAMHGqu3ZCFwtidJQShwZB7RzZCxnBqKuZAxRE1VvwTPsiq55UhOXrwZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481630815.79': {u'requestDuration': 2236.021995544434, u'experiment': u'1481630815.79', u'$lib_version': u'4.3.0', u'time': 1481602018, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAGZBVDYSsHCrdvgoJtCk7j9xxrUQKwAMHJSnEOaX2hwpz5L6Dg21J8zwDmPMmdIRzwKbVlBHK7SgILKDOh2RzHxIrxgL8X4SqNN2nETfkSYhWQXbAh8JLnZAf1gK9iDvPVGJfGNwdG0Ez4xjBoxWxba9Je0AZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481630418.06': {u'requestDuration': 2306.817054748535, u'experiment': u'1481630418.06', u'$lib_version': u'4.3.0', u'time': 1481601620, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAGZBVDYSsHCrdvgoJtCk7j9xxrUQKwAMHJSnEOaX2hwpz5L6Dg21J8zwDmPMmdIRzwKbVlBHK7SgILKDOh2RzHxIrxgL8X4SqNN2nETfkSYhWQXbAh8JLnZAf1gK9iDvPVGJfGNwdG0Ez4xjBoxWxba9Je0AZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481658117.17': {u'requestDuration': 768.0239677429199, u'experiment': u'1481658117.17', u'$lib_version': u'4.3.1', u'time': 1481629317, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAIoateGlRtsn95bGukvVY0ZCJSvxPp27bsw5tPI6F6HHqqtZBeRgwWOhJGBQqJbPkMR4UwYnzI48ZAuk6KCLxnhaq4TYgYjhcvwF3d1X3usrdO7XC8nAmIrUMYt9ZCeA6aZATuHItdyUwozATIrgj85G6YKPL3QZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481629303.43': {u'requestDuration': 2522.42112159729, u'experiment': u'1481629303.43', u'$lib_version': u'4.3.0', u'time': 1481600505, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAGZBVDYSsHCrdvgoJtCk7j9xxrUQKwAMHJSnEOaX2hwpz5L6Dg21J8zwDmPMmdIRzwKbVlBHK7SgILKDOh2RzHxIrxgL8X4SqNN2nETfkSYhWQXbAh8JLnZAf1gK9iDvPVGJfGNwdG0Ez4xjBoxWxba9Je0AZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481662312.6': {u'requestDuration': 596.4610576629639, u'experiment': u'1481662312.6', u'$lib_version': u'4.3.1', u'time': 1481633513, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAIoateGlRtsn95bGukvVY0ZCJSvxPp27bsw5tPI6F6HHqqtZBeRgwWOhJGBQqJbPkMR4UwYnzI48ZAuk6KCLxnhaq4TYgYjhcvwF3d1X3usrdO7XC8nAmIrUMYt9ZCeA6aZATuHItdyUwozATIrgj85G6YKPL3QZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481629584.22': {u'requestDuration': 1800.3249168396, u'experiment': u'1481629584.22', u'$lib_version': u'4.3.0', u'time': 1481600786, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAGZBVDYSsHCrdvgoJtCk7j9xxrUQKwAMHJSnEOaX2hwpz5L6Dg21J8zwDmPMmdIRzwKbVlBHK7SgILKDOh2RzHxIrxgL8X4SqNN2nETfkSYhWQXbAh8JLnZAf1gK9iDvPVGJfGNwdG0Ez4xjBoxWxba9Je0AZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481657698.69': {u'requestDuration': 1038.681030273438, u'experiment': u'1481657698.69', u'$lib_version': u'4.3.1', u'time': 1481628899, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAIoateGlRtsn95bGukvVY0ZCJSvxPp27bsw5tPI6F6HHqqtZBeRgwWOhJGBQqJbPkMR4UwYnzI48ZAuk6KCLxnhaq4TYgYjhcvwF3d1X3usrdO7XC8nAmIrUMYt9ZCeA6aZATuHItdyUwozATIrgj85G6YKPL3QZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481662143.8': {u'requestDuration': 540.8110618591309, u'experiment': u'1481662143.8', u'$lib_version': u'4.3.1', u'time': 1481633344, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAIoateGlRtsn95bGukvVY0ZCJSvxPp27bsw5tPI6F6HHqqtZBeRgwWOhJGBQqJbPkMR4UwYnzI48ZAuk6KCLxnhaq4TYgYjhcvwF3d1X3usrdO7XC8nAmIrUMYt9ZCeA6aZATuHItdyUwozATIrgj85G6YKPL3QZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}, u'1481660971.16': {u'requestDuration': 696.7880725860596, u'experiment': u'1481660971.16', u'$lib_version': u'4.3.1', u'time': 1481632171, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAIoateGlRtsn95bGukvVY0ZCJSvxPp27bsw5tPI6F6HHqqtZBeRgwWOhJGBQqJbPkMR4UwYnzI48ZAuk6KCLxnhaq4TYgYjhcvwF3d1X3usrdO7XC8nAmIrUMYt9ZCeA6aZATuHItdyUwozATIrgj85G6YKPL3QZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}}
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481621720.34
+---------------------------------------
+>>> El experimento 1481621720.34 con la comparacion stable vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481630815.79
+---------------------------------------
+>>> El experimento 1481630815.79 con la comparacion stable vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481630418.06
+---------------------------------------
+>>> El experimento 1481630418.06 con la comparacion stable vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481658117.17
+---------------------------------------
+>>> El experimento 1481658117.17 con la comparacion latency_defects vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+---------------------------------------
+>>> El experimento 1481658117.17 con la comparacion stable vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481629303.43
+---------------------------------------
+>>> El experimento 1481629303.43 con la comparacion stable vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481662312.6
+---------------------------------------
+>>> Tag de la comparación:  latency_defects vs host
+>>> Diferencia de latencia:  -85.541057663
+>>> Envio resultados a Mixpanel...
+---------------------------------------
+>>> Tag de la comparación:  stable vs host
+>>> Diferencia de latencia:  -73.646057663
+>>> Envio resultados a Mixpanel...
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481629584.22
+---------------------------------------
+>>> El experimento 1481629584.22 con la comparacion stable vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481657698.69
+---------------------------------------
+>>> El experimento 1481657698.69 con la comparacion latency_defects vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481662143.8
+---------------------------------------
+>>> El experimento 1481662143.8 con la comparacion latency_defects vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+---------------------------------------
+>>> El experimento 1481662143.8 con la comparacion stable vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481660971.16
+---------------------------------------
+>>> El experimento 1481660971.16 con la comparacion latency_defects vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+---------------------------------------
+>>> El experimento 1481660971.16 con la comparacion stable vs host ya se ha calculado previamente, por lo que no volvemos a enviar los calculos
+Métricas calculadas

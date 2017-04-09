@@ -1,0 +1,35 @@
+3271
+##################################################################
+Realizando pruebas sobre el componente facebook-wall...
+Se ha abierto una nueva ventana en la sesión actual del navegador.
+Se ha abierto una nueva ventana en la sesión actual del navegador.
+Request time  4143.34201813
+Se ha abierto una nueva ventana en la sesión actual del navegador.
+##################################################################
+Recolectando y calculando métrica de latencia sobre los componentes probados...
+ ### COMPONENTE  facebook-wall   ###
+>>> Calculando métricas de latencia de experimentos realizados desde 2016-12-06 hasta 2016-12-11
+Métricas calculadas
+4138
+##################################################################
+Realizando pruebas sobre el componente facebook-wall...
+Se ha abierto una nueva ventana en la sesión actual del navegador.
+Se ha abierto una nueva ventana en la sesión actual del navegador.
+Request time  797.152042389
+Se ha abierto una nueva ventana en la sesión actual del navegador.
+##################################################################
+Recolectando y calculando métrica de latencia sobre los componentes probados...
+ ### COMPONENTE  facebook-wall   ###
+>>> Calculando métricas de latencia de experimentos realizados desde 2016-12-06 hasta 2016-12-12
+{u'1481573497.2': {u'requestDuration': 797.152042388916, u'experiment': u'1481573497.2', u'$lib_version': u'4.3.1', u'time': 1481544698, u'component': u'facebook-wall', u'request': u'https://graph.facebook.com/v2.3/me?fields=home&pretty=1&access_token=EAACEdEose0cBAMxwTzOZAm7CasjOZCgfitnCAUUNIRFd71WnalMIH46PRo1kdQNAVnIOrUGim07rP7xOciKsiqcRGPfEuCV1ZAJjmc5OIkBZBd5TEPQPyzuZB5vZAVoNeZBxO4nmBdkMsz9xMXVo1a4HJSm1RxLytZBd6KOZAIU4VhAZDZD', u'distinct_id': u'1111', u'version': u'host', u'mp_lib': u'python'}}
+------------------------------------------------------------------------------------------
+>>> Id del experimento:  1481573497.2
+---------------------------------------
+>>> Tag de la comparación:  latency_defects vs host
+>>> Diferencia de latencia:  -30.7870423889
+>>> Envio resultados a Mixpanel...
+---------------------------------------
+>>> Tag de la comparación:  stable vs host
+>>> Diferencia de latencia:  -21.3170423889
+>>> Envio resultados a Mixpanel...
+Métricas calculadas
