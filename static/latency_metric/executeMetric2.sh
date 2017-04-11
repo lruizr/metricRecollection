@@ -9,10 +9,10 @@
 # - 	Hay que cambiar el token que está en FacebookWallLatency.html (carpeta Stable) y la variable FACEBOOK_TOKEN
 # En GoogleplusLatency.html (Carpetas Accuracy, Latency, Stable) cambiar el valor de la variable access_token y la variable GOOGLE_TOKEN
 FACEBOOK_TOKEN="EAACEdEose0cBAL4OrKLZAYbmCuEL7a0yHtVMFCKxYxRxoUZCAcpGCh5PUb8aCyVYKZB9ZBpK4UZBP2e6fjUGa14QFkJsLt8rzsD1uBphEVlCHkp0Bnvvkyq4MdZA6VJZCgRLhKoKI4erSimZA0tEswlrX9JbrHICWZBAcD0GxPPhiyZBVFYvrT5ZBCy5jUlIqO3hRYZD"
-GOOGLE_TOKEN="ya29.GmEqBJXQBVHayej2822ruTLopdMrn6Aa8U4n407umVDPPSyui-xybKpWYUk-z3COGndZxgYuCcU2KHOvV_bq7A3DSAd32jWFoC3l8yNHCEZaz3AEnMbMSIbg35CjJoGF_w6n"
+GOOGLE_TOKEN="ya29.GmMqBMy9KDaq9ljILeJRapDV8AZFSXmMQBq5WdCUjSqbCieEbQRdxoKM8_OlGLDdw-E-8DHVIoImdvqro_vMrAqoy9suAlvazu301bhXBgob_HGekvnJu5tnISqrZ0uDFzni638"
 
 # Comentar esta línea si los componentes están deplegados en remoto
-python -m SimpleHTTPServer >> /dev/null &
+python -m SimpleHTTPServer 8081 >> /dev/null &
 PID=`echo $!`
 # echo $PID
 # # Ejecutamos scripts para medir y recolectar los datos

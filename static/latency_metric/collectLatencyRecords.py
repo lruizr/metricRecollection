@@ -28,7 +28,9 @@ def sendResults(component_name, experiment_id, experiment_timestamp, tag ,result
 	global mp
 	print ">>> Tag de la comparación: ", tag
 	print ">>> Diferencia de latencia: ", result
+	print ">>> Id del experimento: ", experiment_id
 	print ">>> Envio resultados a Mixpanel..."
+	print ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
 	mp.track("1111", 'latencyResult', {
 			    'component': component_name,
 			    'experiment_id': experiment_id,
@@ -86,6 +88,8 @@ def main():
 					experiment_id = eventHost["experiment_id"]
 					experiment_timestamp = eventClient['experiment_timestamp']
 					request = eventClient["request"]
+					print "Request del cliente: ", request
+					print "Request del servidor: ", eventHost["request"]
 					# We check for duplicate in latency results
 					result_id = eventClient["event_id"] + tag
 					if not result_id in latency_records:
