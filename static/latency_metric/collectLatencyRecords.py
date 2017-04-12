@@ -64,6 +64,7 @@ def main():
 			experiment_id = 0
 			experiment_timestamp = 0
 			request = ""
+			result_id = ""
 			# Obtain data from mixpanel
 			# First, we obtain data generated from host versions.
 			# The method will return a dict, where the field experiment_id will be the key
