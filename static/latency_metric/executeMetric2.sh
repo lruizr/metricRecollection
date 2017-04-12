@@ -9,7 +9,7 @@
 # - 	Hay que cambiar el token que está en FacebookWallLatency.html (carpeta Stable) y la variable FACEBOOK_TOKEN
 # En GoogleplusLatency.html (Carpetas Accuracy, Latency, Stable) cambiar el valor de la variable access_token y la variable GOOGLE_TOKEN
 FACEBOOK_TOKEN="EAACEdEose0cBAL4OrKLZAYbmCuEL7a0yHtVMFCKxYxRxoUZCAcpGCh5PUb8aCyVYKZB9ZBpK4UZBP2e6fjUGa14QFkJsLt8rzsD1uBphEVlCHkp0Bnvvkyq4MdZA6VJZCgRLhKoKI4erSimZA0tEswlrX9JbrHICWZBAcD0GxPPhiyZBVFYvrT5ZBCy5jUlIqO3hRYZD"
-GOOGLE_TOKEN="ya29.GmMqBMy9KDaq9ljILeJRapDV8AZFSXmMQBq5WdCUjSqbCieEbQRdxoKM8_OlGLDdw-E-8DHVIoImdvqro_vMrAqoy9suAlvazu301bhXBgob_HGekvnJu5tnISqrZ0uDFzni638"
+GOOGLE_TOKEN="ya29.GmErBA3qH9vftbLl-dS0GjazWijLil8TdqVJVcwqOgsHGpPtiRhnssyOJ3bZCMRXXjz2KGC8jaDOMNQNziuI5LI-zVN8wyVyQF89p2bUgHqAFAnZzV_6CtQg5BRyE_UbZobN"
 
 # Comentar esta línea si los componentes están deplegados en remoto
 python -m SimpleHTTPServer 8081 >> /dev/null &
